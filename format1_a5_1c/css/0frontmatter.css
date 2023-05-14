@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+@import "variable_and_page.css";
+@import "sample5-toc.css";
+
+@page: left {
+  background: none;
+}
+@page: right {
+  background: none;
+}
+
+h2::before {
+  content: none;
+}
+h2 {
+  font-size: 36Q;
+  line-height: 42Q;
+  inline-size: 10em;
+  block-size: 2lh;
+  margin-block: 0;
+  display: grid;
+  align-content: center;
+  font-family: "Zen Maru Gothic";
+}
+hr {
+  break-after: page;
+  visibility: hidden;
+}

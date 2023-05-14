@@ -1,0 +1,256 @@
+@charset "utf-8";
+@import "variable_and_page.css";
+@import "sample5-code.css";
+@import "sample5-table.css";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+@page: nth(1) {
+  margin: 0;
+  background: url("img/R1_cssbk_smp_tobirabg.png");
+  background-size: calc(var(--page-width) + 6mm);
+  background-repeat: no-repeat;
+  background-position: -3mm;
+  /* 扉ノンブル */
+  @bottom-right {
+    content: counter(page);
+    font-size: 11Q;
+    block-size: 11Q;
+    margin-block-start: -8mm;
+    padding-inline-end: 6mm;
+    text-align: end;
+    color: #eee;
+  }
+  /* ツメを打ち消す */
+  @top-center {
+    content: none;
+  }
+}
+
+/* 見出し類 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Zen Maru Gothic";
+  text-spacing: no-autospace;
+}
+
+/* 章タイトル */
+h1 {
+  break-before: recto;
+  font-size: 44Q;
+  line-height: 50Q;
+  margin-block-start: 57mm;
+  text-align: center;
+  counter-reset: section-counter 0;
+}
+h1::before {
+  content: counter(chapter-counter);
+  color: #fff;
+  font-size: 66Q;
+  position: absolute;
+  text-align: center;
+  display: block;
+  inline-size: 40mm;
+  block-size: 2lh;
+  inset-inline-start: 50mm;
+  inset-block-start: 24mm;
+}
+
+.chapter-lead {
+  font-weight: 400;
+  margin-block-start: 12mm;
+  margin-inline: 34mm 32mm;
+  text-align: justify;
+}
+
+/* 節 */
+h2 {
+  break-before: page;
+  font-size: 36Q;
+  line-height: 42Q;
+  inline-size: 10em;
+  block-size: 2lh;
+  margin-block: 4mm 11mm;
+  display: grid;
+  align-content: center;
+  /* position: relative; */
+  string-set: section-title content(), section-number content(before);
+}
+/* 節番号 */
+h2::before {
+  content: counter(section-counter, decimal-leading-zero);
+  color: #585656;
+  counter-increment: section-counter;
+  font-size: 48Q;
+  line-height: 1em;
+  text-align: center;
+  padding-block-start: 8mm;
+  padding-inline: 5% 80%;
+
+  /* 背景画像 */
+  /* background-color: #ffe; */
+  background-image: url("img/R2_cssbk_smp_h2bg.png");
+  background-size: calc(var(--page-body-width) + 8mm);
+  background-repeat: no-repeat;
+  inline-size: calc(var(--page-body-width) + 8mm);
+  block-size: calc(var(--page-body-width) * 0.45);
+  position: absolute;
+  inset-block-start: calc(-1 * var(--page-block-margin) - 3mm);
+  inset-inline-start: -8mm;
+  z-index: -1;
+}
+
+h3 {
+  font-size: 20Q;
+  line-height: 24Q;
+  margin-block-start: 1rlh;
+  margin-block-end: 0.5rlh;
+  margin-break: auto;
+  padding-inline-start: 4mm;
+  padding-block: 2mm;
+  block-size: 10mm;
+  /* 背景画像 */
+  background-image: url("img/R3_cssbk_smp_h3bg.png");
+  background-size: cover;
+}
+
+/* hr（改ページ）の直後のh3 */
+hr + section > h3:first-child {
+  margin-block-start: 0;
+}
+
+p {
+  text-indent: 1em;
+  text-align: justify;
+  margin-block: 0;
+  /* font-family: "Open Sans", "こぶりなゴシック StdN W1", "UD デジタル 教科書体 N-B", "Noto Sans JP"; */
+}
+
+/* 箇条書き（リスト） */
+ul,
+ol {
+  margin-block: 0.5lh;
+  margin-inline: 0 2em;
+  font-weight: 700;
+}
+/* 入れ子のときは上下アキなし */
+li ul,
+li ol {
+  margin-block: 0;
+}
+
+/* 強意 */
+em {
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-thickness: 0.4em;
+  text-decoration-color: #bbb;
+  text-underline-offset: -0.1em;
+  text-decoration-skip-ink: none;
+}
+/* 強調（重要） */
+strong {
+  font-weight: 900;
+}
+
+/* 改ページ */
+hr {
+  break-after: page;
+  visibility: hidden;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* 図版 */
+figure {
+  margin-block: 4mm;
+  margin-inline: 0;
+}
+figure.float-right {
+  float: inline-end;
+  inline-size: 17em;
+  margin-block: 2mm;
+  margin-inline: 2em 0;
+}
+
+img {
+  max-inline-size: 100%;
+  border: solid 0.5mm #000;
+}
+
+img[src$=".svg"] {
+  border: none;
+}
+
+/* 以降は第3章の説明で使用するスタイル */
+
+/* インライン画像の配置 */
+p > img {
+  vertical-align: text-bottom;
+}
+
+/* 引用 */
+blockquote p {
+  text-indent: 0;
+  margin: 2em;
+  font-style: italic;
+}
+
+/* 表組み */
+th,
+td {
+  border: solid 0.5mm #888;
+}
+
+.rubytext p {
+  line-height: 1.3em;
+}
+
+/* HTMLタグ */
+.column-article {
+  border: solid 0.5mm #585656;
+  border-radius: 1mm;
+  padding: 1em;
+  padding-block-start: 0.5em;
+  margin-block: 1rlh;
+}
+.column-article p {
+  font-size: 11Q;
+  line-height: 18Q;
+}
+.column-article h5 {
+  font-size: 13Q;
+  margin-block: 0 1mm;
+}
+.column-article h5::before {
+  content: "Column";
+  background-color: #585656;
+  font-size: 11Q;
+  color: #fff;
+  padding-inline: 0.5mm;
+  padding-block: 0;
+  margin-inline-end: 1mm;
+}
+
+@page named-test-page {
+  background: url("back-a5plus3mm.png");
+  background-size: calc(148mm + 6mm);
+  background-repeat: no-repeat;
+  background-position: -3mm;
+}
+
+section:has(> .named-test) {
+  page: named-test-page;
+  break-before: page;
+}

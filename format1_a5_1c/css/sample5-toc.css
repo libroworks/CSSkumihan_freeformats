@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+/* 目次タイトルなど */
+#toc-title::before {
+  content: none;
+}
+#toc {
+  text-spacing: no-autospace;
+}
+#toc ul {
+  list-style: none;
+  margin-inline-start: 0;
+  padding-inline-start: 0;
+  counter-reset: toc-list-counter 0;
+}
+
+/* 目次参照 */
+#toc a {
+  color: #000;
+  text-decoration: none;
+}
+#toc a::after {
+  content: target-counter(attr(href url), page);
+  margin-inline-start: 1em;
+  text-align: end;
+}
+
+/* 章目次（Grid） */
+.toc-chapter {
+  font-size: 24Q;
+  line-height: 1.25em;
+  font-weight: 700;
+  margin-block-end: 2mm;
+  display: grid;
+  grid-template-columns: auto 3em;
+}
+.toc-chapter::before {
+  content: "Chapter " counters(toc-list-counter, "-");
+  counter-increment: toc-list-counter;
+  grid-column: 1/3;
+  font-size: 15Q;
+  line-height: 1.5em;
+  border-block-end: solid 0.5mm #000;
+}
+.toc-chapter::after {
+  font-size: 18Q;
+}
+li:has(> .toc-chapter) {
+  margin-block-end: 8mm;
+}
+
+/* 節目次（before＋リーダー） */
+li:has(> .toc-section) {
+  font-size: 18Q;
+  line-height: 1.2em;
+  font-weight: 700;
+  margin-inline-start: 15mm;
+  margin-block-end: 2mm;
+  break-inside: avoid;
+  position: relative;
+}
+.toc-section::before {
+  content: counters(toc-list-counter, "-");
+  counter-increment: toc-list-counter;
+  position: absolute;
+  inset-inline-start: -15mm;
+  display: block;
+  inline-size: 13mm;
+  text-align: end;
+}
+#toc .toc-section::after {
+  content: leader(dotted) target-counter(attr(href url), page);
+  margin-inline-start: 0.5em;
+}
+li:has(> .toc-section) > ul {
+  margin-block-start: 1mm;
+}
+
+/* 項目次（ぶら下げ） */
+li:has(> .toc-subsection) {
+  font-size: 13Q;
+  line-height: 1.25em;
+  font-weight: 400;
+  margin-inline-start: 3em;
+  text-indent: -3em;
+  margin-inline-end: 1em;
+  margin-block-end: 0.1em;
+}
+.toc-subsection::before {
+  content: counters(toc-list-counter, "-");
+  counter-increment: toc-list-counter;
+  display: inline-block;
+  min-inline-size: 2.5em;
+  text-indent: 0;
+  margin-inline-end: 0.5em;
+  text-align: start;
+}

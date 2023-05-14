@@ -1,0 +1,74 @@
+@import "sample5-headings.css";
+
+:root {
+  --index-size: 13.6mm;
+}
+
+@page {
+  counter-reset: chapter-counter var(--chapter-number);
+}
+
+@page: right {
+  /* ツメ */
+  @right-top {
+    content: counter(chapter-counter);
+    color: #fff;
+    font-size: 20Q;
+    font-weight: 700;
+    line-height: 20Q;
+    text-align: start;
+    inline-size: 12mm;
+    margin-inline-start: 5.5mm;
+    padding-inline-start: 2mm;
+    padding-block: 2mm;
+    block-size: calc(var(--index-size) - 4mm);
+    margin-block-start: 0;
+    transform: translateY(calc(var(--index-size) * (var(--chapter-number) - 1)));
+    /* background: #585656; */
+    background-image: url("img/R1_cssbk_smp_sideindex.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  @right-bottom {
+    content: "";
+    inline-size: 12mm;
+    font-size: 20Q;
+    padding-block: 2mm;
+    line-height: 20Q;
+    margin-inline-start: 5.5mm;
+    block-size: calc(var(--index-size) - 4mm);
+    margin-block-end: 0;
+    /* background: #f00; */
+  }
+
+  @right-middle {
+    content: string(chapter, first);
+    font-size: 11Q;
+    line-height: 1em;
+    writing-mode: vertical-rl;
+    block-size: 1em;
+    vertical-align: top;
+    margin-block-end: 6.5mm;
+    padding-inline: 2mm;
+    transform: translateY(calc(var(--index-size) * (var(--chapter-number) - 1)));
+    /* background: #eee; */
+  }
+
+  /* 柱 */
+  @top-right {
+    content: string(section-number, first);
+    inline-size: 8mm;
+    text-align: center;
+    font-size: 14Q;
+    color: #fff;
+  }
+  @top-center {
+    content: "▶" string(section-title, first);
+    text-align: end;
+    padding-inline-end: 3mm;
+  }
+  @top-left {
+    content: "";
+    inline-size: 8mm;
+  }
+}

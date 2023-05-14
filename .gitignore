@@ -1,0 +1,5 @@
+.vs-*
+~$*.pptx
+.DS_Store
+20_genkou/0_frontmatter.pdf
+20_genkou/merged-output.pdf
