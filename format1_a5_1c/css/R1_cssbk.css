@@ -183,6 +183,9 @@ figure.float-right {
   margin-block: 2mm;
   margin-inline: 2em 0;
 }
+figure p {
+  text-indent: 0;
+}
 
 img {
   max-inline-size: 100%;
