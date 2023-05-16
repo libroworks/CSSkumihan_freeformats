@@ -102,65 +102,6 @@ lang: 'ja'
 
 などとと書きつつも、最近のAI技術では「存在しないものをそれらしく復元する」こともできてしまうので、将来的には何とかなってしまうかもしれないなとも思う。未来を見通すのは難しい。
 
-<hr style="break-after: page; border: none;">
-
-|●列見出し |●列見出し（中央ぞろえ）   | ●列見出し（右ぞろえ） |
-|---------|:-----------------------:|---------------------:| 
-|セル      |セル                     |セル                  |
-|セル      |セル                     |90                    |
-|セル      |セルの中に長めの文を入れる |1000                 |
-
-|●列見出し |●列見出し（中央ぞろえ）   | ●列見出し（右ぞろえ）
-|--|:--:|--:| 
-|セル |セル |セル
-|セル |セル |90
-|セル |セルの中に長めの文を入れる |1000
-
-
-<hr style="break-after: page; border: none;">
-
-### ルビサンプル
-
-コンピュータサイエンスの{初|しょ}{歩|ほ}として{必|かなら}ず{登|とう}{場|じょう}するのが、**ノイマン{型|がた}コンピュータ（{von|フォン} {Neumann|ノイマン} {architecture|アーキテクチャ}）**もしくは**コンピュータの5{大|だい}{装|そう}{置|ち}**だ。
-
-<div class="rubytext">
-
-コンピュータサイエンスの初歩として必ず登場するのが、**ノイマン型コンピュータ（{von|フォン} {Neumann|ノイマン} {architecture|アーキテクチャ}）**もしくは**コンピュータの5大装置**だ。コンピュータは「制御」「演算」「記憶」「入力」「出力」という5つの装置で構成されるという説で、**フォン・ノイマン氏**がその論文を書いたので、ノイマン型と呼ぶ。
-
-</div>
-
-
-
-<hr style="break-after: page; border: none;">
-
-```python
-from pathlib import Path
-from bs4 import BeautifulSoup
-
-result = '## 目次{#toc role="doc-toc"}\n'
-outpath = Path('tocoutput.md')
-outpath.write_text(result, encoding='utf-8')
-```
-
-```python title=generate_toc.py
-from pathlib import Path
-from bs4 import BeautifulSoup
-
-result = '## 目次{#toc role="doc-toc"}\n'
-outpath = Path('tocoutput.md')
-outpath.write_text(result, encoding='utf-8')
-```
-
-
-<hr style="break-after: left; border: none;">
-
-ここまでは本文です。
-
-<div class="column-article">
-
-##### コラム記事タイトル
-ここは**囲み記事**にします。囲み記事は`<div class="column-article">`と`</div>`で囲んでください。ここは**囲み記事**にします。囲み記事は`<div class="column-article">`と`</div>`で囲んでください。ここは**囲み記事**にします。囲み記事は`<div class="column-article">`と`</div>`で囲んでください。
-</div>
 
 ### フォントテスト
 

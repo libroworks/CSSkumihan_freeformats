@@ -111,102 +111,17 @@
           アナログの信号（レコードとかフィルムとか）だったら、昔は読み取れなかった情報が未来の技術で読み取れる可能性があるが、デジタルの信号（DVDとかBDとか）はいつまで経っても記録時点のままなので、切り捨てられた情報は未来永劫復元できない。最近よく聞くデジタルリマスターも、大元のフィルムから起こすのであって、DVDを原本とすることはない。
         </p>
         <p>などとと書きつつも、最近のAI技術では「存在しないものをそれらしく復元する」こともできてしまうので、将来的には何とかなってしまうかもしれないなとも思う。未来を見通すのは難しい。</p>
-        <hr style="break-after: page; border: none;">
-        <table>
-          <thead>
-            <tr>
-              <th>●列見出し</th>
-              <th align="center">●列見出し（中央ぞろえ）</th>
-              <th align="right">●列見出し（右ぞろえ）</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>セル</td>
-              <td align="center">セル</td>
-              <td align="right">セル</td>
-            </tr>
-            <tr>
-              <td>セル</td>
-              <td align="center">セル</td>
-              <td align="right">90</td>
-            </tr>
-            <tr>
-              <td>セル</td>
-              <td align="center">セルの中に長めの文を入れる</td>
-              <td align="right">1000</td>
-            </tr>
-          </tbody>
-        </table>
-        <table>
-          <thead>
-            <tr>
-              <th>●列見出し</th>
-              <th align="center">●列見出し（中央ぞろえ）</th>
-              <th align="right">●列見出し（右ぞろえ）</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>セル</td>
-              <td align="center">セル</td>
-              <td align="right">セル</td>
-            </tr>
-            <tr>
-              <td>セル</td>
-              <td align="center">セル</td>
-              <td align="right">90</td>
-            </tr>
-            <tr>
-              <td>セル</td>
-              <td align="center">セルの中に長めの文を入れる</td>
-              <td align="right">1000</td>
-            </tr>
-          </tbody>
-        </table>
-        <hr style="break-after: page; border: none;">
-        <section class="level3" aria-labelledby="ルビサンプル">
-          <h3 id="ルビサンプル">ルビサンプル</h3>
-          <p>コンピュータサイエンスの<ruby>初<rt>しょ</rt></ruby><ruby>歩<rt>ほ</rt></ruby>として<ruby>必<rt>かなら</rt></ruby>ず<ruby>登<rt>とう</rt></ruby><ruby>場<rt>じょう</rt></ruby>するのが、<strong>ノイマン<ruby>型<rt>がた</rt></ruby>コンピュータ（<ruby>von<rt>フォン</rt></ruby> <ruby>Neumann<rt>ノイマン</rt></ruby> <ruby>architecture<rt>アーキテクチャ</rt></ruby>）</strong>もしくは<strong>コンピュータの5<ruby>大<rt>だい</rt></ruby><ruby>装<rt>そう</rt></ruby><ruby>置<rt>ち</rt></ruby></strong>だ。</p>
-          <div class="rubytext">
-            <p>コンピュータサイエンスの初歩として必ず登場するのが、<strong>ノイマン型コンピュータ（<ruby>von<rt>フォン</rt></ruby> <ruby>Neumann<rt>ノイマン</rt></ruby> <ruby>architecture<rt>アーキテクチャ</rt></ruby>）</strong>もしくは<strong>コンピュータの5大装置</strong>だ。コンピュータは「制御」「演算」「記憶」「入力」「出力」という5つの装置で構成されるという説で、<strong>フォン・ノイマン氏</strong>がその論文を書いたので、ノイマン型と呼ぶ。</p>
-          </div>
-          <hr style="break-after: page; border: none;">
-          <pre class="language-python"><code class="language-python"><span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path
-<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
-
-result <span class="token operator">=</span> <span class="token string">'## 目次{#toc role="doc-toc"}\n'</span>
-outpath <span class="token operator">=</span> Path<span class="token punctuation">(</span><span class="token string">'tocoutput.md'</span><span class="token punctuation">)</span>
-outpath<span class="token punctuation">.</span>write_text<span class="token punctuation">(</span>result<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span></code></pre>
-          <figure class="language-python">
-            <figcaption>generate_toc.py</figcaption>
-            <pre class="language-python"><code class="language-python"><span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path
-<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
-
-result <span class="token operator">=</span> <span class="token string">'## 目次{#toc role="doc-toc"}\n'</span>
-outpath <span class="token operator">=</span> Path<span class="token punctuation">(</span><span class="token string">'tocoutput.md'</span><span class="token punctuation">)</span>
-outpath<span class="token punctuation">.</span>write_text<span class="token punctuation">(</span>result<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span></code></pre>
-          </figure>
-          <hr style="break-after: left; border: none;">
-          <p>ここまでは本文です。</p>
-          <div class="column-article">
-            <section class="level5" aria-labelledby="コラム記事タイトル">
-              <h5 id="コラム記事タイトル">コラム記事タイトル</h5>
-              <p>ここは<strong>囲み記事</strong>にします。囲み記事は<code>&#x3C;div class="column-article"></code>と<code>&#x3C;/div></code>で囲んでください。ここは<strong>囲み記事</strong>にします。囲み記事は<code>&#x3C;div class="column-article"></code>と<code>&#x3C;/div></code>で囲んでください。ここは<strong>囲み記事</strong>にします。囲み記事は<code>&#x3C;div class="column-article"></code>と<code>&#x3C;/div></code>で囲んでください。</p>
-            </section>
-          </div>
+        <section class="level3" aria-labelledby="フォントテスト">
+          <h3 id="フォントテスト">フォントテスト</h3>
+          <p class="font1">フォント1～Noto Sans JP（Web）</p>
+          <p class="font2">フォント2～UDPゴシック（Web）</p>
+          <p class="font3">フォント3～UD明朝（Web）</p>
+          <p class="font4">フォント4～ZEN丸ゴシック（Web）</p>
+          <p class="font5">フォント5～ZENオールド明朝（Web）</p>
+          <p class="font6">フォント6～Klee One（Web）</p>
+          <p class="font7">フォント7～游ゴシック Light（Win付属）</p>
+          <p class="font8">フォント8～游明朝 Light（Win付属）</p>
         </section>
-      </section>
-      <section class="level3" aria-labelledby="フォントテスト">
-        <h3 id="フォントテスト">フォントテスト</h3>
-        <p class="font1">フォント1～Noto Sans JP（Web）</p>
-        <p class="font2">フォント2～UDPゴシック（Web）</p>
-        <p class="font3">フォント3～UD明朝（Web）</p>
-        <p class="font4">フォント4～ZEN丸ゴシック（Web）</p>
-        <p class="font5">フォント5～ZENオールド明朝（Web）</p>
-        <p class="font6">フォント6～Klee One（Web）</p>
-        <p class="font7">フォント7～游ゴシック Light（Win付属）</p>
-        <p class="font8">フォント8～游明朝 Light（Win付属）</p>
       </section>
     </section>
   </body>
