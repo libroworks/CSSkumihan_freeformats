@@ -1,21 +1,19 @@
-<!doctype html>
-<html lang="ja">
-  <head>
+<!DOCTYPE html><html lang="ja"><head>
     <meta charset="utf-8">
-    <title>コンピュータの&#x3C;br>重箱の隅</title>
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/chapter2.css">
     <link rel="stylesheet" href="css/fonttest.css">
   </head>
   <body>
     <section class="level1" aria-labelledby="h1_1">
-      <h1 id="h1_1">コンピュータの<br>重箱の隅</h1>
+      <h1 id="h1_0">コンピュータの<br>重箱の隅</h1>
       <div class="chapter-lead">
         章のリード文。章のリード文。章のリード文。章のリード文。
         章のリード文。章のリード文。章のリード文。章のリード文。
       </div>
       <section class="level2" aria-labelledby="h2_1">
-        <h2 id="h2_1" class="section">論理回路から加算器は飛躍しすぎ？</h2>
+        <h2 id="h2_0" class="section">論理回路から加算器は飛躍しすぎ？</h2>
         <p>過去に「コンピュータの歴史」を<strong>ブール論理（Boolean Logic）</strong>の誕生あたりからたどろうとして、いろいろと調べてみたのだが、<strong>ジョージ・ブール氏</strong>の考えたものは現在ブール論理として習うものとかなり違っていた。ブール氏が考えたのは、<em>言葉で推論するとどうしてもあいまいさが生じるので、数式を使って推論すべきだ</em>というものだった。実際、ブール氏の論文を見てみると、足し算や掛け算らしき数式しか書かれていない。</p>
         <figure>
           <img src="img/img1-bool.png" alt="The Mathematical Analysis of Logic by George Boole" class="float-bottom">
@@ -25,7 +23,7 @@
         <p><a href="https://www.gutenberg.org/ebooks/36884">https://www.gutenberg.org/ebooks/36884</a>にリンクしたい</p>
         <p>現在使われている論理記号やAND、ORなどの用語は、後世に<strong>数理論理学</strong>として発展していく中で作られたもので、最初のとっかかりのアイデアを考えた人として、ブール氏の名前を冠することにしたらしい。</p>
         <section class="level3" aria-labelledby="論理回路の誕生">
-          <h3 id="論理回路の誕生">論理回路の誕生</h3>
+          <h3 id="h3_0">論理回路の誕生</h3>
           <p>ブール氏が論文を書いてから100年ほどして、電信に使われるリレーを使った<strong>論理回路（Logic Circuit）</strong>が誕生した。<strong>クロード・シャノン氏</strong>が論理回路についての論文を書いたのが1937年で、ほぼ同時期に最初のデジタルコンピュータも誕生している。このあたり順番がはっきりしなくてモヤッとするが、たいていの発明・発見は、複数の人が同時期に同じ答えにたどりつくもののようだ。</p>
           <figure>
             <img src="img/img2-logic.svg" alt="論理回路（Logic Circuit）" width="210" class="float-right">
@@ -50,7 +48,7 @@
         </section>
       </section>
       <section class="level2" aria-labelledby="通信機能は5大装置のどこに入る">
-        <h2 id="通信機能は5大装置のどこに入る">通信機能は5大装置のどこに入る？</h2>
+        <h2 id="h2_1">通信機能は5大装置のどこに入る？</h2>
         <p>コンピュータサイエンスの初歩として必ず登場するのが、<strong>ノイマン型コンピュータ（von Neumann architecture）</strong>もしくは<strong>コンピュータの5大装置</strong>だ。コンピュータは「制御」「演算」「記憶」「入力」「出力」という5つの装置で構成されるという説で、<strong>フォン・ノイマン氏</strong>がその論文を書いたので、ノイマン型と呼ぶ。ノイマン氏は悪魔のように頭がいい人だったが、5大装置をノイマン氏自身がゼロから考えたわけではなく、<strong>EDVAC</strong>という開発中のコンピュータを見学して、「つまり、こういうことだろ？」と論文をまとめたそうだ。</p>
         <ul>
           <li>制御：記憶装置からプログラムを読み込み、各装置に指示を出す
@@ -92,7 +90,7 @@
         <p>ノイマン氏に聞いてみたいところだが、悪魔のように頭のいい人だったらしいので、「馬鹿め、そのぐらい自分で考えろ」といわれそうだ。</p>
       </section>
       <section class="level2" aria-labelledby="デジタルとアナログ">
-        <h2 id="デジタルとアナログ">デジタルとアナログ</h2>
+        <h2 id="h2_2">デジタルとアナログ</h2>
         <p>よくコンピュータは<strong>デジタル</strong>だという。デジタルは「連続した量」を意味する<strong>アナログ</strong>の対義語で、連続していないという意味から日本語では「離散的な値」ともいう。電気や光、音といった自然現象はすべてアナログだ。</p>
         <p>ここでよく考えてみると、コンピュータの電子回路も電気が流れているからアナログではないかという答えにたどり着く。実際のところ、コンピュータの電気信号も連続的に変化していて微妙なブレがあり、<em>この範囲にだいたいおさまったら「1」、この範囲だったら「0」</em>という感じに決めて、デジタルと見なしているそうだ。</p>
         <figure>
@@ -112,7 +110,7 @@
         </p>
         <p>などとと書きつつも、最近のAI技術では「存在しないものをそれらしく復元する」こともできてしまうので、将来的には何とかなってしまうかもしれないなとも思う。未来を見通すのは難しい。</p>
         <section class="level3" aria-labelledby="フォントテスト">
-          <h3 id="フォントテスト">フォントテスト</h3>
+          <h3 id="h3_1">フォントテスト</h3>
           <p class="font1">フォント1～Noto Sans JP（Web）</p>
           <p class="font2">フォント2～UDPゴシック（Web）</p>
           <p class="font3">フォント3～UD明朝（Web）</p>
@@ -124,5 +122,6 @@
         </section>
       </section>
     </section>
-  </body>
-</html>
+  
+
+</body></html>

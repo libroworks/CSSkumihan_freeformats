@@ -160,6 +160,8 @@ outpath.write_text(result, encoding='utf-8')
 ここは**囲み記事**にします。囲み記事は`<div class="column-article">`と`</div>`で囲んでください。ここは**囲み記事**にします。囲み記事は`<div class="column-article">`と`</div>`で囲んでください。ここは**囲み記事**にします。囲み記事は`<div class="column-article">`と`</div>`で囲んでください。
 </div>
 
+---
+
 ### 数式サンプル
 
 インライン数式は$y=\frac{1}{x^2}$こんな感じになります。

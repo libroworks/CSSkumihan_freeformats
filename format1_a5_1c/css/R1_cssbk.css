@@ -123,8 +123,10 @@ h3 {
 }
 
 /* hr（改ページ）の直後のh3 */
-hr + section > h3:first-child {
-  margin-block-start: 0;
+hr + h3,
+hr + section > h3:first-child,
+section:has(hr:last-child) + section > h3:first-child {
+  margin-break: discard;
 }
 
 p {
