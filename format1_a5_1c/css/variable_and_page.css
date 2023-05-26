@@ -7,7 +7,7 @@
   --base-line-height: 21Q;
   --page-width: 148mm;
   --page-height: 210mm;
-  --letters-per-line: 41;
+  --letters-per-line: 39;
   --lines-per-page: 32; /*下マージンは+1行分減らす*/
   /* ページマージン自動計算 */
   --page-body-width: calc(var(--base-font-size) * var(--letters-per-line));

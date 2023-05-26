@@ -42,14 +42,14 @@
   }
 
   @right-middle {
-    content: string(chapter, first);
+    content: string(chapter-title, first);
     font-size: 11Q;
     line-height: 1em;
     writing-mode: vertical-rl;
     block-size: 1em;
     vertical-align: top;
     margin-block-end: 6.5mm;
-    padding-inline: 2mm;
+    padding-inline: 0;
     transform: translateY(calc(var(--index-size) * (var(--chapter-number) - 1)));
     /* background: #eee; */
   }
@@ -57,7 +57,7 @@
   /* 柱 */
   @top-right {
     content: string(section-number, first);
-    inline-size: 8mm;
+    inline-size: 4mm;
     text-align: center;
     font-size: 14Q;
     font-weight: 700;

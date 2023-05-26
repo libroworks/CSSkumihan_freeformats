@@ -50,6 +50,7 @@ h1 {
   margin-block-start: 57mm;
   text-align: center;
   counter-reset: section-counter 0;
+  string-set: chapter-title content();
 }
 h1::before {
   content: counter(chapter-counter);
