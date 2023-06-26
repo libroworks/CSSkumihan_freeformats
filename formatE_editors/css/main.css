@@ -1,0 +1,269 @@
+@charset "utf-8";
+@import "page_settings.css";
+@import "sample5-code.css";
+@import "sample5-table.css";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  counter-reset: chapter-counter 1;
+}
+
+/* 見出し類 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--header-font);
+  text-spacing: no-autospace;
+}
+
+/* 章タイトル */
+h1 {
+  break-before: recto;
+  font-size: 44Q;
+  line-height: 50Q;
+  margin-block-start: 57mm;
+  text-align: center;
+  counter-reset: section-counter 0;
+  string-set: chapter-title content();
+}
+h1::before {
+  content: "chapter" counter(chapter-counter);
+  font-size: 30Q;
+  position: absolute;
+  text-align: center;
+  display: block;
+  inline-size: 40mm;
+  block-size: 2lh;
+  inset-inline-start: 50mm;
+  inset-block-start: 40mm;
+}
+
+.chapter-lead {
+  font-weight: 400;
+  margin-block-start: 24mm;
+  margin-inline: auto;
+  text-align: justify;
+  inline-size: 30em;
+}
+
+/* 節 */
+h2 {
+  break-before: page;
+  font-size: 36Q;
+  line-height: 42Q;
+  inline-size: 10em;
+  block-size: 2lh;
+  margin-block: 4mm 11mm;
+  margin-inline-start: 20mm;
+  display: grid;
+  align-content: center;
+  position: relative;
+  string-set: section-title content(), section-number content(before);
+}
+/* 節番号 */
+h2::before {
+  content: counter(section-counter, decimal-leading-zero);
+  color: #585656;
+  counter-increment: section-counter;
+  font-size: 48Q;
+  line-height: 14mm;
+  text-align: center;
+  /* padding-block-start: 8mm; */
+  /* padding-inline: 5% 80%; */
+
+  /* 背景画像 */
+  background-color: #88ddff;
+  background-image: url("img/R2_cssbk_smp_h2bg.png");
+  background-size: var(--page-body-width);
+  background-repeat: no-repeat;
+  inline-size: 16mm;
+  block-size: 16mm;
+  position: absolute;
+  inset-inline-start: -20mm;
+  inset-block-start: 0mm;
+  z-index: -1;
+}
+
+h3 {
+  font-size: 20Q;
+  line-height: 24Q;
+  margin-block-start: 1rlh;
+  margin-block-end: 0.5rlh;
+  margin-break: auto;
+  padding-inline-start: 4mm;
+  padding-block: 2mm;
+  block-size: 10mm;
+  background-color: #88ddff;
+  /* 背景画像 */
+  /* background-image: url("img/R3_cssbk_smp_h3bg.png");
+  background-size: cover; */
+}
+h4 {
+  font-size: var(--base-font-size);
+}
+h4::before {
+  content: "●";
+}
+
+h6 {
+  font-size: 11Q;
+  margin-block-end: 2mm;
+}
+
+/* hr（改ページ）の直後のh3 */
+hr + h3,
+hr + section > h3:first-child,
+section:has(hr:last-child) + section > h3:first-child {
+  margin-break: discard;
+}
+
+p {
+  text-indent: 1em;
+  text-align: justify;
+  margin-block: 0;
+  /* font-family: "Open Sans", "こぶりなゴシック StdN W1", "UD デジタル 教科書体 N-B", "Noto Sans JP"; */
+}
+
+/* 箇条書き（リスト） */
+ul,
+ol {
+  margin-block: 0.5lh;
+  margin-inline: 0 2em;
+  font-weight: 700;
+  padding-inline-start: 2em;
+}
+/* 入れ子のときは上下アキなし */
+li :is(ul, ol) {
+  margin-block: 0;
+}
+
+/* 強意 */
+em {
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-thickness: 0.4em;
+  text-decoration-color: #fd0;
+  text-underline-offset: -0.1em;
+  text-decoration-skip-ink: none;
+}
+/* 強調（重要） */
+strong {
+  font-weight: 900;
+}
+/* キーボードフォント */
+kbd {
+  font-family: keyfont;
+}
+
+/* 改ページ */
+hr {
+  break-after: page;
+  visibility: hidden;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* 図版 */
+:is(.figure, figure) {
+  display: flex;
+  flex-direction: row;
+  /*横並びにする*/
+  align-items: flex-start;
+  justify-content: flex-start;
+  /*縦に伸ばさない*/
+  flex-wrap: wrap;
+  position: relative;
+
+  margin-block: 4mm;
+  margin-inline: 0;
+}
+:is(.figure, figure) :is(img, svg) {
+  border: solid 0.5mm #ccc;
+}
+
+:is(.figure, figure).float-right {
+  float: inline-end;
+  inline-size: 17em;
+  margin-block: 2mm;
+  margin-inline: 2em 0;
+}
+:is(.figure, figure) p {
+  text-indent: 0;
+}
+/* 図中文字 */
+:is(.figure, figure) ul {
+  position: absolute;
+  font-size: 11Q;
+  max-inline-size: 14em;
+  inline-size: fit-content;
+  right: 0;
+  inset-inline-end: none;
+  list-style: none;
+  margin: 0;
+}
+:is(.figure, figure) li {
+  font-size: 11Q;
+  line-height: 16Q;
+  border: solid 0.25mm #f00;
+  background: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2mm;
+  padding: 0 0.5mm;
+}
+
+img {
+  max-inline-size: 100%;
+  border: solid 0.5mm #000;
+}
+
+img[src$=".svg"] {
+  border: none;
+}
+
+/* 以降は第3章の説明で使用するスタイル */
+
+/* インライン画像の配置 */
+p > img {
+  vertical-align: text-bottom;
+}
+
+/* 引用 */
+blockquote p {
+  text-indent: 0;
+  font-style: italic;
+}
+blockquote {
+  border-inline-start: solid 2mm #ddd;
+  margin-block: 4mm;
+  margin-inline: 0;
+  padding: 0;
+  padding-inline: 2em;
+}
+
+/* コラム枠 */
+.column {
+  border: solid 0.2mm #8df;
+  border-radius: 10px;
+  padding: 4mm;
+  padding-inline-end: 6mm;
+  padding-inline-start: 6mm;
+  margin-block-start: 6mm;
+  margin-inline: auto;
+  width: 114mm;
+  background: #eef;
+}
+.column h5 {
+  margin-top: 0;
+  font-size: 14Q;
+  color: #3da8c9;
+}

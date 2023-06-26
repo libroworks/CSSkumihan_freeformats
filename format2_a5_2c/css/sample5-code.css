@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/* コード */
+@font-face {
+  font-family: udevgothic-r;
+  src: url("fonts/UDEVGothic-Regular.ttf");
+}
+
+code {
+  font-family: udevgothic-r;
+}
+
+pre {
+  font-family: udevgothic-r;
+  white-space: pre-wrap;
+  line-break: anywhere;
+  text-spacing: none;
+  font-size: 12Q;
+  line-height: 18Q;
+  border: solid 0.5mm #585656;
+  padding-block: 0.5mm;
+  padding-inline: 1.5mm;
+  margin-block: 6mm;
+  margin-inline: 0;
+  /* background: repeating-linear-gradient(#eee 0, #eee 18Q, #fff 18Q, #fff 36Q); */
+  background-image: url("img/vs_pre_bg.png");
+  background-size: var(--page-body-width) 9mm;
+  background-repeat: repeat-y;
+  background-position-y: 0.5mm;
+  border-radius: 1mm;
+}
+figcaption + pre {
+  margin-block-start: 0;
+  border-start-start-radius: 0;
+}
+
+figcaption:has(+ pre) {
+  background: #585656;
+  inline-size: fit-content;
+  color: #fff;
+  padding-inline: 2mm;
+  border-radius: 1mm 1mm 0 0;
+}
+.token.comment {
+  color: #888;
+}
