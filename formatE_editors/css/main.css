@@ -269,3 +269,27 @@ blockquote {
   font-size: 14Q;
   color: #3da8c9;
 }
+
+/*編集コメント（サイドバー表示）*/
+.hen-comment {
+  position: absolute;
+  display: block;
+  text-indent: 0;
+  right: -8em;
+  font-size: 8Q;
+  line-height: 13Q;
+  background: #ff0;
+  color: #f00;
+  width: 8em;
+  border: solid 0.25mm #f80;
+  font-family: notosans-r;
+}
+/*編集コメント（長文用）*/
+.hen,
+.hen p {
+  font-size: 10Q;
+  line-height: 3mm;
+  background: #ff0;
+  color: #f00;
+  text-indent: 0;
+}
