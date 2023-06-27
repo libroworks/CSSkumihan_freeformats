@@ -58,38 +58,49 @@ h1::before {
 h2 {
   break-before: page;
   font-size: 36Q;
-  line-height: 42Q;
+  line-height: 48Q;
   inline-size: 10em;
   block-size: 2lh;
-  margin-block: 4mm 11mm;
+  margin-block: 4mm 40mm;
   margin-inline-start: 20mm;
+  padding-inline-start: 5mm;
   display: grid;
   align-content: center;
-  position: relative;
+  /* position: relative; */
   /* string-set: section-title content(), section-number content(before); */
 }
 /* 節番号 */
 h2::before {
-  content: counter(section-counter, decimal-leading-zero);
-  color: #585656;
+  content: counter(chapter-counter) "-" counter(section-counter);
+  color: #fff;
   counter-increment: section-counter;
   font-size: 48Q;
+  font-weight: 900;
   line-height: 14mm;
   text-align: center;
-  /* padding-block-start: 8mm; */
-  /* padding-inline: 5% 80%; */
+  padding-block-start: 27mm;
+  padding-inline: 4% 84%;
 
   /* 背景画像 */
-  background-color: #88ddff;
-  background-image: url("img/R2_cssbk_smp_h2bg.png");
-  background-size: var(--page-body-width);
+  /* background-color: #88ddff; */
+  background-image: url("img/section-header.png");
+  background-size: contain;
   background-repeat: no-repeat;
-  inline-size: 16mm;
-  block-size: 16mm;
+  inline-size: 157mm;
+  block-size: 79mm;
   position: absolute;
-  inset-inline-start: -20mm;
-  inset-block-start: 0mm;
+  inset-inline-start: calc(var(--page-inline-margin) * -1 + 3mm);
+  inset-block-start: calc(var(--page-block-margin-start) * -1);
   z-index: -1;
+}
+
+.section-lead {
+  position: absolute;
+  inset-inline-start: 12mm;
+  inset-block-start: 41mm;
+  inline-size: 36em;
+  line-height: 20Q;
+  font-weight: 700;
 }
 
 h3 {
@@ -98,14 +109,21 @@ h3 {
   margin-block-start: 1rlh;
   margin-block-end: 0.5rlh;
   margin-break: auto;
-  padding-inline-start: 4mm;
+  padding-inline-start: 0mm;
   padding-block: 2mm;
   block-size: 10mm;
-  background-color: #88ddff;
+  /* background-color: #88ddff; */
   /* 背景画像 */
   /* background-image: url("img/R3_cssbk_smp_h3bg.png");
   background-size: cover; */
 }
+h3::before {
+  content: "◆";
+  color: #6dba44;
+  font-size: 7mm;
+  padding: 0;
+}
+
 h4 {
   font-size: var(--base-font-size);
 }

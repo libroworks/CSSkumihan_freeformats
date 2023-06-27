@@ -44,7 +44,7 @@
 }
 
 @page {
-  size: A5;
+  size: var(--page-width) var(--page-height);
   /* bleed: 3mm; */
   /* marks: crop cross; */
   margin-block-start: var(--page-block-margin-start);

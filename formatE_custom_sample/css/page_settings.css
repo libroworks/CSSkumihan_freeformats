@@ -12,13 +12,13 @@
 
 :root {
   /* 基本体裁 */
-  --base-font-size: 12Q;
-  --base-line-height: 21Q;
-  --page-width: 148mm;
-  --page-height: 210mm;
-  --letters-per-line: 39;
-  --lines-per-page: 34;
-  --page-margin-top: 15mm; /*天地マージンは天のみ指定できる。地は自動計算*/
+  --base-font-size: 13Q;
+  --base-line-height: 22Q;
+  --page-width: 182mm;
+  --page-height: 257mm;
+  --letters-per-line: 43;
+  --lines-per-page: 39;
+  --page-margin-top: 18mm; /*天地マージンは天のみ指定できる。地は自動計算*/
   --page-margin-xshift: 0mm; /*左右マージンはデフォルト左右均等。xshift値でずらす*/
   --column-font-size: 12Q; /*コラムのフォントサイズ*/
   /* フォント指定 */
@@ -44,7 +44,7 @@
 }
 
 @page {
-  size: A5;
+  size: var(--page-width) var(--page-height);
   /* bleed: 3mm; */
   /* marks: crop cross; */
   margin-block-start: var(--page-block-margin-start);
@@ -99,3 +99,7 @@
     content: none;
   }
 }
+
+/* body {
+  background: #eee;
+} */
