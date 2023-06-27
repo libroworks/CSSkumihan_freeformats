@@ -82,7 +82,7 @@
     text-align: end;
   }
   @bottom-center {
-    content: string(chapter-title, first);
+    content: string(chapter-number, first) "　" string(chapter-title, first);
   }
 }
 

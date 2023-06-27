@@ -32,7 +32,7 @@ h1 {
   margin-block-start: 57mm;
   text-align: center;
   counter-reset: section-counter 0;
-  string-set: chapter-title content();
+  string-set: chapter-title content(), chapter-number content(before);
 }
 h1::before {
   content: "chapter" counter(chapter-counter);
@@ -66,7 +66,7 @@ h2 {
   display: grid;
   align-content: center;
   position: relative;
-  string-set: section-title content(), section-number content(before);
+  /* string-set: section-title content(), section-number content(before); */
 }
 /* 節番号 */
 h2::before {
@@ -157,7 +157,9 @@ em {
 /* 強調（重要） */
 strong {
   font-weight: 900;
+  color: #b40;
 }
+
 /* キーボードフォント */
 kbd {
   font-family: keyfont;
