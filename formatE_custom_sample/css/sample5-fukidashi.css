@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+:root {
+  --kaiwa-facesize: 21mm;
+  --kaiwa-margin: 2mm;
+}
+
+/* フキダシを文字数に合わせて拡大縮小したい場合は 
+　連続するフキダシ全体を<div class="kaiwa-container">～</div>で囲んでください。
+　その状態で.kaiwaのinline-sizeをfit-contentにすると、
+　文字数に合わせたフキダシ幅に調整できます。
+*/
+.kaiwa-container {
+  margin-block: 8mm;
+  margin-inline: 0;
+  display: grid;
+}
+
+/* 吹き出し */
+.kaiwa {
+  border: solid 0.25mm #000;
+  border-radius: 4mm;
+  margin-block: var(--kaiwa-margin);
+  margin-inline: var(--kaiwa-facesize);
+  padding-block: 1mm;
+  padding-inline: 2mm;
+  font-size: 14Q;
+  line-height: 20Q;
+  text-indent: 0;
+  break-inside: avoid-page;
+  position: relative;
+  inline-size: calc(var(--page-body-width) - var(--kaiwa-facesize) * 2);
+  /* .kaiwa-containerを使う場合は以下のコメントを外す*/
+  /* inline-size: fit-content; */
+}
+.deshi {
+  justify-self: end;
+}
+
+/* 同じキャラが連続する場合は空きを拡げる */
+.sense + .sense,
+.deshi + .deshi {
+  margin-block-start: calc(6mm + var(--kaiwa-margin));
+}
+
+.sense::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: calc(var(--kaiwa-facesize) * -1 + 0.6mm);
+  inset-block-start: -4mm;
+  inline-size: var(--kaiwa-facesize);
+  block-size: 14mm;
+}
+.sense.fum::after {
+  background: url("kaiwaimg/fukidashi-left.svg"), url("kaiwaimg/chara2-1.png");
+  background-repeat: no-repeat;
+  background-size: 5mm, var(--kaiwa-facesize);
+  background-position-x: 100%, 0%;
+  background-position-y: 6mm, -3mm;
+}
+.sense.shock::after {
+  background: url("kaiwaimg/fukidashi-left.svg"), url("kaiwaimg/chara2-2.png");
+  background-repeat: no-repeat;
+  background-size: 5mm, var(--kaiwa-facesize);
+  background-position-x: 100%, 0%;
+  background-position-y: 6mm, -3mm;
+}
+.sense.soreda::after {
+  background: url("kaiwaimg/fukidashi-left.svg"), url("kaiwaimg/chara2-3.png");
+  background-repeat: no-repeat;
+  background-size: 5mm, var(--kaiwa-facesize);
+  background-position-x: 100%, 0%;
+  background-position-y: 6mm, -3mm;
+}
+.sense.egao::after {
+  background: url("kaiwaimg/fukidashi-left.svg"), url("kaiwaimg/chara2-5.png");
+  background-repeat: no-repeat;
+  background-size: 5mm, var(--kaiwa-facesize);
+  background-position-x: 100%, 0%;
+  background-position-y: 6mm, -3mm;
+}
+.sense.normal::after {
+  background: url("kaiwaimg/fukidashi-left.svg"), url("kaiwaimg/chara2-8.png");
+  background-repeat: no-repeat;
+  background-size: 5mm, var(--kaiwa-facesize);
+  background-position-x: 100%, 0%;
+  background-position-y: 6mm, -3mm;
+}
+
+.deshi::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: calc(var(--kaiwa-facesize) * -1 + 0.6mm);
+  inset-block-start: -4mm;
+  inline-size: var(--kaiwa-facesize);
+  block-size: 14mm;
+}
+.deshi.naki::after {
+  background: url("kaiwaimg/fukidashi-right.svg"), url("kaiwaimg/chara1-1.png");
+  background-repeat: no-repeat;
+  background-size: 5mm, var(--kaiwa-facesize);
+  background-position-x: 0%;
+  background-position-y: 6mm, -3mm;
+}
+.deshi.hatena::after {
+  background: url("kaiwaimg/fukidashi-right.svg"), url("kaiwaimg/chara1-2.png");
+  background-repeat: no-repeat;
+  background-size: 5mm, var(--kaiwa-facesize);
+  background-position-x: 0%;
+  background-position-y: 6mm, -3mm;
+}
+.deshi.gao::after {
+  background: url("kaiwaimg/fukidashi-right.svg"), url("kaiwaimg/chara1-4.png");
+  background-repeat: no-repeat;
+  background-size: 5mm, var(--kaiwa-facesize);
+  background-position-x: 0%;
+  background-position-y: 6mm, -3mm;
+}
+.deshi.normal::after {
+  background: url("kaiwaimg/fukidashi-right.svg"), url("kaiwaimg/chara1-5.png");
+  background-repeat: no-repeat;
+  background-size: 5mm, var(--kaiwa-facesize);
+  background-position-x: 0%;
+  background-position-y: 6mm, -3mm;
+}
+.deshi.egao::after {
+  background: url("kaiwaimg/fukidashi-right.svg"), url("kaiwaimg/chara1-7.png");
+  background-repeat: no-repeat;
+  background-size: 5mm, var(--kaiwa-facesize);
+  background-position-x: 0%;
+  background-position-y: 6mm, -3mm;
+}

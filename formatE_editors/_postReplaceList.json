@@ -113,11 +113,11 @@
   },
   {
     "f": "<p[^>]*>【先生([^】]+)】",
-    "r": "<p class=\"kaiwa teacher $1\">"
+    "r": "<p class=\"kaiwa sense $1\">"
   },
   {
     "f": "<p[^>]*>【生徒([^】]+)】",
-    "r": "<p class=\"kaiwa student $1\">"
+    "r": "<p class=\"kaiwa deshi $1\">"
   },
   {
     "f": "<p>(<div class=\"[^\"]+\">)</p>",

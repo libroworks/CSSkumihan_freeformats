@@ -219,9 +219,47 @@ $$
 </figure>
 
 
-![RGBそのままの画像](img/sample1b-img1.png){width="300"}
+---
+
+### 会話サンプル
+
+【生徒naki】なき
+
+【生徒hatena】はてな
+
+【生徒gao】がお
+
+【生徒normal】ノーマル
+
+【生徒egao】えがお
+
+<hr class="blankline">
+
+【先生fum】ふむ
+
+
+【先生shock】ショック
+
+【先生soreda】それだ
+
+【先生egao】えがお
+
+【先生normal】ノーマル
 
 ---
+
+【生徒normal】交互ノーマル
+
+【先生fum】交互ふむ
+
+【生徒egao】交互えがお
+
+【先生shock】交互ショック
+
+
+
+---
+
 
 
 @comment:編集コメントを小さく表示できます。@commend

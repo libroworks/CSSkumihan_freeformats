@@ -2,6 +2,7 @@
 @import "page_settings.css";
 @import "sample5-code.css";
 @import "sample5-table.css";
+@import "sample5-fukidashi.css";
 
 *,
 *::after,
@@ -184,8 +185,12 @@ kbd {
 }
 
 /* 改ページ */
-hr {
+hr.pagebreak {
   break-after: page;
+  visibility: hidden;
+}
+hr.blankline {
+  height: var(--base-line-height);
   visibility: hidden;
 }
 
