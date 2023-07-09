@@ -22,9 +22,7 @@
         <section class="level3" aria-labelledby="プログラムを実行する手順を確認する">
           <h3 id="h3_0">プログラムを実行する手順を確認する</h3>
           <p>Rubyプログラムを書いて実行してみましょう。Rubyプログラムを実行するには3つの手順を踏みます。</p>
-          <p>まずはプログラムファイルを保存するフォルダを作成しておきましょう。本書では、ファイルはC:\Users……</p>
-          <p>過去に「コンピュータの歴史」を<strong>ブール論理（Boolean Logic）</strong>の誕生あたりからたどろうとして、いろいろと調べてみたのだが、<strong>ジョージ・ブール氏</strong>の考えたものは現在ブール論理として習うものとかなり違っていた。ブール氏が考えたのは、<em>言葉で推論するとどうしてもあいまいさが生じるので、数式を使って推論すべきだ</em>というものだった。実際、ブール氏の論文を見てみると、足し算や掛け算らしき数式しか書かれていない。</p>
-          <p><a href="https://www.gutenberg.org/ebooks/36884">https://www.gutenberg.org/ebooks/36884</a>にリンクしたい</p>
+          <p>まずはプログラムファイルを保存するフォルダを作成しておきましょう。本書では、ファイルはC:\Users…過去に「コンピュータの歴史」を<strong>ブール論理（Boolean Logic）</strong>の誕生あたりからたどろうとして、いろいろと調べてみたのだが、<strong>ジョージ・ブール氏</strong>の考えたものは現在ブール論理として習うものとかなり違っていた。</p>
           <div class="figure">
             
             <svg width="87.207mm" height="68.157mm" viewBox="0 0 87.207 68.157">
@@ -38,17 +36,13 @@
               </li></ul></div>
             
           
+          <p>ブール氏が考えたのは、<em>言葉で推論するとどうしてもあいまいさが生じるので、数式を使って推論すべきだ</em>というものだった。実際、ブール氏の論文を見てみると、足し算や掛け算らしき数式しか書かれていない。</p>
+          <p><a href="https://www.gutenberg.org/ebooks/36884">https://www.gutenberg.org/ebooks/36884</a>にリンクしたい</p>
           <p>現在使われている論理記号やAND、ORなどの用語は、後世に<strong>数理論理学</strong>として発展していく中で作られたもので、最初のとっかかりのアイデアを考えた人として、ブール氏の名前を冠することにしたらしい。</p>
         </section>
         <section class="level3" aria-labelledby="論理回路の誕生">
           <h3 id="h3_1">論理回路の誕生</h3>
           <p>ブール氏が論文を書いてから100年ほどして、電信に使われるリレーを使った<strong>論理回路（Logic Circuit）</strong>が誕生した。<strong>クロード・シャノン氏</strong>が論理回路についての論文を書いたのが1937年で、ほぼ同時期に最初のデジタルコンピュータも誕生している。このあたり順番がはっきりしなくてモヤッとするが、たいていの発明・発見は、複数の人が同時期に同じ答えにたどりつくもののようだ。</p>
-          <figure>
-            <img src="img/img2-logic.svg" alt="論理回路（Logic Circuit）" width="210" class="float-right">
-            <figcaption aria-hidden="true">論理回路（Logic Circuit）</figcaption>
-          </figure>
-          <p>ここで不思議なのは、スイッチを直列に並べてAND回路、並列に並べてOR回路が作れるというのは、ブール論理の延長として理解できる。しかし、その先、つまり<em>論理回路を使って計算する</em>という発想はどこからでてきたのだろう？</p>
-          <p>2進数1桁の計算を行う<strong>半加算器（Half Adder）</strong>は、AND回路2つとOR回路1つ、NOT回路1つの組み合わせで作れる。</p>
           <pre class="language-py"><code class="language-py"><span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path
 <span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
 
@@ -66,6 +60,15 @@ outpath<span class="token punctuation">.</span>write_text<span class="token punc
 <span class="codenum-elem">050</span>outpath<span class="token punctuation">.</span>write_text<span class="token punctuation">(</span>result<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
 </code></pre>
 
+            <div class="figure right">
+              
+              <svg width="40mm" height="40mm" viewBox="0 0 40 40">
+                <image width="845.256" height="255.764" xlink:href="img/img2-logic.svg" transform="translate(0,0) scale(0.1)"></image>
+              </svg>
+            
+            </div>
+            <p>ここで不思議なのは、スイッチを直列に並べてAND回路、並列に並べてOR回路が作れるというのは、ブール論理の延長として理解できる。しかし、その先、つまり<em>論理回路を使って計算する</em>という発想はどこからでてきたのだろう？</p>
+            <p>2進数1桁の計算を行う<strong>半加算器（Half Adder）</strong>は、AND回路2つとOR回路1つ、NOT回路1つの組み合わせで作れる。</p>
           </section>
           <section class="level6" aria-labelledby="表見出し">
             <h6 id="h6_1" class="codetitle"><span>表見出し</span></h6>

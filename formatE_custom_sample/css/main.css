@@ -255,6 +255,12 @@ img[src$=".svg"] {
   border: none;
 }
 
+/* 図版右寄せ */
+.figure.right {
+  float: inline-end;
+  margin-left: 1em;
+}
+
 /* 以降は第3章の説明で使用するスタイル */
 
 /* インライン画像の配置 */

@@ -15,31 +15,31 @@
       
       <section class="level2" aria-labelledby="論理回路から加算器は飛躍しすぎ">
         <h2 id="h2_0">論理回路から加算器は飛躍しすぎ？</h2>
-        <p>過去に「コンピュータの歴史」を<strong>ブール論理（Boolean Logic）</strong>の誕生あたりからたどろうとして、いろいろと調べてみたのだが、<strong>ジョージ・ブール氏</strong>の考えたものは現在ブール論理として習うものとかなり違っていた。ブール氏が考えたのは、<em>言葉で推論するとどうしてもあいまいさが生じるので、数式を使って推論すべきだ</em>というものだった。実際、ブール氏の論文を見てみると、足し算や掛け算らしき数式しか書かれていない。</p>
-        <p><a href="https://www.gutenberg.org/ebooks/36884">https://www.gutenberg.org/ebooks/36884</a>にリンクしたい</p>
-        <div class="figure">
+        <p>ここでは、Rubyのプログラムを作成して、実行するまでの流れを解説します。最初にエディターでプログラムを書いて、コマンドプロンプトを実行するだけで、すぐに結果を確認できます。</p>
+        <section class="level3" aria-labelledby="プログラムを実行する手順を確認する">
+          <h3 id="h3_0">プログラムを実行する手順を確認する</h3>
+          <p>Rubyプログラムを書いて実行してみましょう。Rubyプログラムを実行するには3つの手順を踏みます。</p>
+          <p>まずはプログラムファイルを保存するフォルダを作成しておきましょう。本書では、ファイルはC:\Users…過去に「コンピュータの歴史」を<strong>ブール論理（Boolean Logic）</strong>の誕生あたりからたどろうとして、いろいろと調べてみたのだが、<strong>ジョージ・ブール氏</strong>の考えたものは現在ブール論理として習うものとかなり違っていた。</p>
+          <div class="figure">
+            
+            <svg width="87.207mm" height="68.157mm" viewBox="0 0 87.207 68.157">
+              <image width="218.017" height="170.392" xlink:href="img/sample1b-img1.png" transform="translate(0,0) scale(0.4)"></image>
+            </svg>
           
-          <svg width="87.207mm" height="68.157mm" viewBox="0 0 87.207 68.157">
-            <image width="218.017" height="170.392" xlink:href="img/sample1b-img1.png" transform="translate(0,0) scale(0.4)"></image>
-          </svg>
-        
-        <ul>
-          <li class="akakome"><span>❶</span>「I accept for terms...」にチェック</li>
-          <li>
-            ❷「Next」をクリック
-            </li></ul></div>
+          <ul>
+            <li class="akakome"><span>❶</span>「I accept for terms...」にチェック</li>
+            <li>
+              ❷「Next」をクリック
+              </li></ul></div>
+            
           
-        
-        <p>現在使われている論理記号やAND、ORなどの用語は、後世に<strong>数理論理学</strong>として発展していく中で作られたもので、最初のとっかかりのアイデアを考えた人として、ブール氏の名前を冠することにしたらしい。</p>
+          <p>ブール氏が考えたのは、<em>言葉で推論するとどうしてもあいまいさが生じるので、数式を使って推論すべきだ</em>というものだった。実際、ブール氏の論文を見てみると、足し算や掛け算らしき数式しか書かれていない。</p>
+          <p><a href="https://www.gutenberg.org/ebooks/36884">https://www.gutenberg.org/ebooks/36884</a>にリンクしたい</p>
+          <p>現在使われている論理記号やAND、ORなどの用語は、後世に<strong>数理論理学</strong>として発展していく中で作られたもので、最初のとっかかりのアイデアを考えた人として、ブール氏の名前を冠することにしたらしい。</p>
+        </section>
         <section class="level3" aria-labelledby="論理回路の誕生">
-          <h3 id="h3_0">論理回路の誕生</h3>
+          <h3 id="h3_1">論理回路の誕生</h3>
           <p>ブール氏が論文を書いてから100年ほどして、電信に使われるリレーを使った<strong>論理回路（Logic Circuit）</strong>が誕生した。<strong>クロード・シャノン氏</strong>が論理回路についての論文を書いたのが1937年で、ほぼ同時期に最初のデジタルコンピュータも誕生している。このあたり順番がはっきりしなくてモヤッとするが、たいていの発明・発見は、複数の人が同時期に同じ答えにたどりつくもののようだ。</p>
-          <figure>
-            <img src="img/img2-logic.svg" alt="論理回路（Logic Circuit）" width="210" class="float-right">
-            <figcaption aria-hidden="true">論理回路（Logic Circuit）</figcaption>
-          </figure>
-          <p>ここで不思議なのは、スイッチを直列に並べてAND回路、並列に並べてOR回路が作れるというのは、ブール論理の延長として理解できる。しかし、その先、つまり<em>論理回路を使って計算する</em>という発想はどこからでてきたのだろう？</p>
-          <p>2進数1桁の計算を行う<strong>半加算器（Half Adder）</strong>は、AND回路2つとOR回路1つ、NOT回路1つの組み合わせで作れる。</p>
           <pre class="language-py"><code class="language-py"><span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path
 <span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
 
@@ -57,6 +57,15 @@ outpath<span class="token punctuation">.</span>write_text<span class="token punc
 <span class="codenum-elem">050</span>outpath<span class="token punctuation">.</span>write_text<span class="token punctuation">(</span>result<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
 </code></pre>
 
+            <div class="figure right">
+              
+              <svg width="40mm" height="40mm" viewBox="0 0 40 40">
+                <image width="845.256" height="255.764" xlink:href="img/img2-logic.svg" transform="translate(0,0) scale(0.1)"></image>
+              </svg>
+            
+            </div>
+            <p>ここで不思議なのは、スイッチを直列に並べてAND回路、並列に並べてOR回路が作れるというのは、ブール論理の延長として理解できる。しかし、その先、つまり<em>論理回路を使って計算する</em>という発想はどこからでてきたのだろう？</p>
+            <p>2進数1桁の計算を行う<strong>半加算器（Half Adder）</strong>は、AND回路2つとOR回路1つ、NOT回路1つの組み合わせで作れる。</p>
           </section>
           <section class="level6" aria-labelledby="表見出し">
             <h6 id="h6_1" class="codetitle"><span>表見出し</span></h6>
@@ -173,7 +182,7 @@ outpath<span class="token punctuation">.</span>write_text<span class="token punc
         <p>そのときはしかたなく、入力と出力を図の右側に配置して、「入出力兼用の機器もある」と説明したのだが、もっとうまいやり方があったのではと今でもときどき思う。</p>
         <p>ノイマン氏に聞いてみたいところだが、悪魔のように頭のいい人だったらしいので、「馬鹿め、そのぐらい自分で考えろ」といわれそうだ。</p>
         <section class="level3" aria-labelledby="h3見出し小見出し">
-          <h3 id="h3_1">h3見出し（小見出し）</h3>
+          <h3 id="h3_2">h3見出し（小見出し）</h3>
           <section class="level4" aria-labelledby="h4見出し小小見出し">
             <h4 id="h4_0">h4見出し（小小見出し）</h4>
             <section class="level5" aria-labelledby="h5見出しコラム">
@@ -213,7 +222,7 @@ outpath<span class="token punctuation">.</span>write_text<span class="token punc
         <hr style="break-after: page; border: none;">
         <hr style="break-after: page; border: none;">
         <section class="level3" aria-labelledby="ルビサンプル">
-          <h3 id="h3_2">ルビサンプル</h3>
+          <h3 id="h3_3">ルビサンプル</h3>
           <p>コンピュータサイエンスの<ruby>初<rt>しょ</rt></ruby><ruby>歩<rt>ほ</rt></ruby>として<ruby>必<rt>かなら</rt></ruby>ず<ruby>登<rt>とう</rt></ruby><ruby>場<rt>じょう</rt></ruby>するのが、<strong>ノイマン<ruby>型<rt>がた</rt></ruby>コンピュータ（<ruby>von<rt>フォン</rt></ruby> <ruby>Neumann<rt>ノイマン</rt></ruby> <ruby>architecture<rt>アーキテクチャ</rt></ruby>）</strong>もしくは<strong>コンピュータの5<ruby>大<rt>だい</rt></ruby><ruby>装<rt>そう</rt></ruby><ruby>置<rt>ち</rt></ruby></strong>だ。</p>
           <div class="rubytext">
             <p>コンピュータサイエンスの初歩として必ず登場するのが、<strong>ノイマン型コンピュータ（<ruby>von<rt>フォン</rt></ruby> <ruby>Neumann<rt>ノイマン</rt></ruby> <ruby>architecture<rt>アーキテクチャ</rt></ruby>）</strong>もしくは<strong>コンピュータの5大装置</strong>だ。コンピュータは「制御」「演算」「記憶」「入力」「出力」という5つの装置で構成されるという説で、<strong>フォン・ノイマン氏</strong>がその論文を書いたので、ノイマン型と呼ぶ。</p>
@@ -227,7 +236,7 @@ outpath<span class="token punctuation">.</span>write_text<span class="token punc
           <hr class="pagebreak">
         </section>
         <section class="level3" aria-labelledby="数式サンプル">
-          <h3 id="h3_3">数式サンプル</h3>
+          <h3 id="h3_4">数式サンプル</h3>
           <p>インライン数式は<span class="math inline" data-math-typeset="true">\(y=\frac{1}{x^2}\)</span>こんな感じになります。</p>
           <p>ディスプレイ数式は<span class="math display" data-math-typeset="true">$$f(x)=\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^2}{2}\right)$$</span>となります。</p>
           <p><span class="math display" data-math-typeset="true">$$
@@ -251,7 +260,7 @@ $$</span></p>
           <hr class="pagebreak">
         </section>
         <section class="level3" aria-labelledby="会話サンプル">
-          <h3 id="h3_4">会話サンプル</h3>
+          <h3 id="h3_5">会話サンプル</h3>
           <p class="kaiwa deshi naki">なき</p>
           <p class="kaiwa deshi hatena">はてな</p>
           <p class="kaiwa deshi gao">がお</p>
