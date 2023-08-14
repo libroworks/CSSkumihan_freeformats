@@ -8,34 +8,15 @@
   <body>
     <section class="level1" aria-labelledby="コンピュータのbr重箱の隅">
       <h1 id="h1_0">コンピュータの<br>重箱の隅</h1>
-      <div class="chapter-lead">
-        章のリード文。章のリード文。章のリード文。章のリード文。
-        章のリード文。章のリード文。章のリード文。章のリード文。
-        </div>
-      
       <section class="level2" aria-labelledby="論理回路から加算器は飛躍しすぎ">
-        <h2 id="h2_0">論理回路から加算器は飛躍しすぎ！？</h2>
-        <div class="section-lead">
-          ここでは、Rubyのプログラムを作成して、実行するまでの流れを解説します。最初にエディターでプログラムを書いて、コマンドプロンプトを実行するだけで、すぐに結果を確認できます。
-          </div>
-        
+        <h2 id="h2_0">論理回路から加算器は飛躍しすぎ？</h2>
         <section class="level3" aria-labelledby="プログラムを実行する手順を確認する">
           <h3 id="h3_0">プログラムを実行する手順を確認する</h3>
-          <p>Rubyプログラムを書いて実行してみましょう。Rubyプログラムを実行するには3つの手順を踏みます。</p>
           <p>まずはプログラムファイルを保存するフォルダを作成しておきましょう。本書では、ファイルはC:\Users…過去に「コンピュータの歴史」を<strong>ブール論理（Boolean Logic）</strong>の誕生あたりからたどろうとして、いろいろと調べてみたのだが、<strong>ジョージ・ブール氏</strong>の考えたものは現在ブール論理として習うものとかなり違っていた。</p>
-          <div class="figure">
-            
-            <svg width="87.207mm" height="68.157mm" viewBox="0 0 87.207 68.157">
-              <image width="218.017" height="170.392" xlink:href="img/sample1b-img1.png" transform="translate(0,0) scale(0.4)"></image>
-            </svg>
-          
-          <ul>
-            <li class="akakome"><span>❶</span>「I accept for terms...」にチェック</li>
-            <li>
-              ❷「Next」をクリック
-              </li></ul></div>
-            
-          
+          <figure>
+            <img src="img/sample1b-img1.png" alt="画像" width="300">
+            <figcaption aria-hidden="true">画像</figcaption>
+          </figure>
           <p>ブール氏が考えたのは、<em>言葉で推論するとどうしてもあいまいさが生じるので、数式を使って推論すべきだ</em>というものだった。実際、ブール氏の論文を見てみると、足し算や掛け算らしき数式しか書かれていない。</p>
           <p><a href="https://www.gutenberg.org/ebooks/36884">https://www.gutenberg.org/ebooks/36884</a>にリンクしたい</p>
           <p>現在使われている論理記号やAND、ORなどの用語は、後世に<strong>数理論理学</strong>として発展していく中で作られたもので、最初のとっかかりのアイデアを考えた人として、ブール氏の名前を冠することにしたらしい。</p>
@@ -51,27 +32,24 @@ outpath <span class="token operator">=</span> Path<span class="token punctuation
 outpath<span class="token punctuation">.</span>write_text<span class="token punctuation">(</span>result<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span></code></pre>
 
           <section class="level6" aria-labelledby="generate_tocpy">
-            <h6 class="codenumber" start-number="45" id="h6_0"><span>generate_toc.py</span></h6>
+            <h6 class="codenumber" start-number="45" id="h6_0">generate_toc.py</h6>
             <pre class="language-python"><code class="language-python"><span class="codenum-elem">045</span><span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path
 <span class="codenum-elem">046</span><span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
 <span class="codenum-elem">047</span>
 <span class="codenum-elem">048</span>result <span class="token operator">=</span> <span class="token string">'## 目次{#toc role="doc-toc"}\n'</span>
-<span class="codenum-elem">049</span>outpath <span class="token operator">=</span> Path<span class="token punctuation">(</span><span class="token string">'tocoutput.md'</span><span class="token punctuation">)</span>        <span class="token comment codered">コード引き出し線（先頭が←）</span>
+<span class="codenum-elem">049</span>outpath <span class="token operator">=</span> Path<span class="token punctuation">(</span><span class="token string">'tocoutput.md'</span><span class="token punctuation">)</span>        <span class="token comment">#←コード引き出し線（先頭が←）</span>
 <span class="codenum-elem">050</span>outpath<span class="token punctuation">.</span>write_text<span class="token punctuation">(</span>result<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
 </code></pre>
 
-            <div class="figure right">
-              
-              <svg width="40mm" height="40mm" viewBox="0 0 40 40">
-                <image width="845.256" height="255.764" xlink:href="img/img2-logic.svg" transform="translate(0,0) scale(0.1)"></image>
-              </svg>
-            
-            </div>
+            <figure>
+              <img src="img/img2-logic.svg" alt="論理回路（Logic Circuit）" width="200">
+              <figcaption aria-hidden="true">論理回路（Logic Circuit）</figcaption>
+            </figure>
             <p>ここで不思議なのは、スイッチを直列に並べてAND回路、並列に並べてOR回路が作れるというのは、ブール論理の延長として理解できる。しかし、その先、つまり<em>論理回路を使って計算する</em>という発想はどこからでてきたのだろう？</p>
             <p>2進数1桁の計算を行う<strong>半加算器（Half Adder）</strong>は、AND回路2つとOR回路1つ、NOT回路1つの組み合わせで作れる。</p>
           </section>
           <section class="level6" aria-labelledby="表見出し">
-            <h6 id="h6_1" class="codetitle"><span>表見出し</span></h6>
+            <h6 id="h6_1">表見出し</h6>
             <table>
               <thead>
                 <tr>
@@ -124,7 +102,7 @@ outpath<span class="token punctuation">.</span>write_text<span class="token punc
                 </tr>
               </tbody>
             </table>
-            <p><kbd>Enter</kbd>キー</p>
+            <p>〘Enter〙キー</p>
             <figure>
               <img src="img/img3-adder.svg" alt="半加算器（Half Adder）" width="210" class="float-right">
               <figcaption aria-hidden="true">半加算器（Half Adder）</figcaption>
@@ -134,12 +112,13 @@ outpath<span class="token punctuation">.</span>write_text<span class="token punc
             </blockquote>
             <p>残念ながら、加算器の発明者の資料は見つけられなかった。おそらく、何かを作ろうとして論理回路の組み合わせを考えているうちに、「0+0=00」「0+1=01」「1+0=01」「1+1=10」という結果を出せば足し算する回路が作れるという答えにパッとたどりついたのだろう。</p>
             <p>世の中には頭のいい人はたくさんいるので、このぐらいは複数の人が同時に思いつくものなのかもしれない。</p>
-            <div class="figure">
+            <p>
+              :::{figure}
               
               <img src="img/img2-logic.svg" alt="論理回路（Logic Circuit）" width="200">
               <img src="img/img3-adder.svg" alt="半加算器（Half Adder）" width="200">
-              </div>
-            
+              :::
+            </p>
           </section>
         </section>
       </section>
@@ -191,7 +170,7 @@ outpath<span class="token punctuation">.</span>write_text<span class="token punc
             <section class="level5" aria-labelledby="h5見出しコラム">
               <h5 id="h5_0">h5見出し（コラム？）</h5>
               <section class="level6" aria-labelledby="h6見出し図表見出し">
-                <h6 id="h6_2" class="codetitle"><span>h6見出し（図表見出し）</span></h6>
+                <h6 id="h6_2">h6見出し（図表見出し）</h6>
                 <div class="column">
                   <h5 id="h5_1">コラムタイトル</h5>
                   <p>コラムテキスト。コラムタイトルのあとは1行空ける</p>
@@ -230,13 +209,13 @@ outpath<span class="token punctuation">.</span>write_text<span class="token punc
           <div class="rubytext">
             <p>コンピュータサイエンスの初歩として必ず登場するのが、<strong>ノイマン型コンピュータ（<ruby>von<rt>フォン</rt></ruby> <ruby>Neumann<rt>ノイマン</rt></ruby> <ruby>architecture<rt>アーキテクチャ</rt></ruby>）</strong>もしくは<strong>コンピュータの5大装置</strong>だ。コンピュータは「制御」「演算」「記憶」「入力」「出力」という5つの装置で構成されるという説で、<strong>フォン・ノイマン氏</strong>がその論文を書いたので、ノイマン型と呼ぶ。</p>
           </div>
-          <hr class="pagebreak">
+          <hr>
           <p>ここまでは本文です。</p>
           <div class="column">
             <h5 id="h5_2">コラムタイトル</h5>
             <p>ここは<strong>囲み記事</strong>にします。囲み記事は<code>&lt;div class="column"&gt;</code>と<code>&lt;/div&gt;</code>で囲んでください。ここは<strong>囲み記事</strong>にします。囲み記事は<code>&lt;div class="column"&gt;</code>と<code>&lt;/div&gt;</code>で囲んでください。ここは<strong>囲み記事</strong>にします。囲み記事は<code>&lt;div class="column"&gt;</code>と<code>&lt;/div&gt;</code>で囲んでください。</p>
           </div>
-          <hr class="pagebreak">
+          <hr>
         </section>
         <section class="level3" aria-labelledby="数式サンプル">
           <h3 id="h3_4">数式サンプル</h3>
@@ -260,32 +239,33 @@ $$</span></p>
               <img src="img/photo96dpi.png" alt="96dpiの写真" width="136">
             </p>
           </figure>
-          <hr class="pagebreak">
+          <hr>
         </section>
         <section class="level3" aria-labelledby="会話サンプル">
           <h3 id="h3_5">会話サンプル</h3>
-          <p class="kaiwa deshi naki">なき</p>
-          <p class="kaiwa deshi hatena">はてな</p>
-          <p class="kaiwa deshi gao">がお</p>
-          <p class="kaiwa deshi normal">ノーマル</p>
-          <p class="kaiwa deshi egao">えがお</p>
+          <p>【生徒naki】なき</p>
+          <p>【生徒hatena】はてな</p>
+          <p>【生徒gao】がお</p>
+          <p>【生徒normal】ノーマル</p>
+          <p>【生徒egao】えがお</p>
           <hr class="blankline">
-          <p class="kaiwa sense fum">ふむ</p>
-          <p class="kaiwa sense shock">ショック</p>
-          <p class="kaiwa sense soreda">それだ</p>
-          <p class="kaiwa sense egao">えがお</p>
-          <p class="kaiwa sense normal">ノーマル</p>
-          <hr class="pagebreak">
-          <p class="kaiwa deshi normal">交互ノーマル</p>
-          <p class="kaiwa sense fum">交互ふむ</p>
-          <p class="kaiwa deshi egao">交互えがお</p>
-          <p class="kaiwa sense shock">交互ショック</p>
-          <hr class="pagebreak">
-          <p><span class="hen-comment">編集コメントを小さく表示できます。</span></p>
-          <div class="hen">
+          <p>【先生fum】ふむ</p>
+          <p>【先生shock】ショック</p>
+          <p>【先生soreda】それだ</p>
+          <p>【先生egao】えがお</p>
+          <p>【先生normal】ノーマル</p>
+          <hr>
+          <p>【生徒normal】交互ノーマル</p>
+          <p>【先生fum】交互ふむ</p>
+          <p>【生徒egao】交互えがお</p>
+          <p>【先生shock】交互ショック</p>
+          <hr>
+          <p>@comment:編集コメントを小さく表示できます。@commend</p>
+          <p>
+            :::{.hen}
             このページが空いています！　埋めてください！
-            </div>
-          
+            :::
+          </p>
         </section>
       </section>
     </section>

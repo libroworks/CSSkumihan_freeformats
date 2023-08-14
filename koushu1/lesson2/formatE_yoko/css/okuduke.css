@@ -1,0 +1,22 @@
+dl.okuduke {
+  font-size: 12Q;
+  line-height: 18Q;
+  border-block: solid 0.15mm #000;
+  padding-block: 2mm;
+  margin-block-start: 3rlh;
+  break-inside: avoid;
+  display: grid;
+  grid-template-columns: 6em auto;
+  column-gap: 1em;
+}
+.okuduke dt {
+  font-weight: 700;
+}
+.okuduke dd {
+  margin-inline-start: 0;
+}
+p:has(small) {
+  font-size: 11Q;
+  text-indent: 0;
+  line-height: 1.25em;
+}
