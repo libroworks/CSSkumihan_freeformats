@@ -81,6 +81,7 @@
     content: counter(page);
     text-align: end;
   }
+  /* 柱 */
   @bottom-center {
     content: string(chapter-number, first) "　" string(chapter-title, first);
   }

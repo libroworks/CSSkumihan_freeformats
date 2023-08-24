@@ -74,12 +74,13 @@ h2 {
   font-size: 28Q;
   line-height: 42Q;
   /* inline-size: 10em; */
-  block-size: 5rlh;
+  block-size: 4rlh;
   /* margin-block: 4mm 11mm; */
   /* margin-inline-start: 20mm; */
   margin-inline-start: 20mm;
-  display: grid;
-  align-content: center;
+  /* display: grid;
+  align-content: center; */
+  line-height: 4rlh;
   position: relative;
   /* string-set: section-title content(), section-number content(before); */
 }
@@ -91,7 +92,7 @@ h2::before {
   block-size: 24mm;
   inline-size: 24mm;
   position: absolute;
-  inset-block-start: 1mm;
+  inset-block-start: -3mm;
   inset-inline-start: -30mm;
 }
 

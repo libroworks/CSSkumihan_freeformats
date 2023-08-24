@@ -18,8 +18,8 @@
   --page-height: 210mm;
   --letters-per-line: 49;
   --lines-per-page: 20;
-  --page-margin-top: 15mm; /*左右マージンは天のみ指定できる。地は自動計算*/
-  --page-margin-yshift: 0mm; /*天地マージンはデフォルト天地均等。yshift値でずらす*/
+  --page-margin-top: 22mm; /*上下マージンは天のみ指定できる。地は自動計算*/
+  --page-margin-xshift: 0mm; /*左右マージンはデフォルト天地均等。xshift値でずらす*/
   --column-font-size: 12Q; /*コラムのフォントサイズ*/
   /* フォント指定 */
   --main-text-font: "Noto Sans JP"; /*メインフォント*/
@@ -29,9 +29,9 @@
   /* ページマージン自動計算 */
   --page-body-height: calc(var(--base-font-size) * var(--letters-per-line));
   --page-body-width: calc(var(--base-line-height) * var(--lines-per-page));
-  --page-inline-margin: calc((var(--page-height) - var(--page-body-height)) / 2);
-  --page-block-margin-start: var(--page-margin-top);
-  --page-block-margin-end: calc(var(--page-width) - var(--page-body-width) - var(--page-block-margin-start));
+  --page-block-margin: calc((var(--page-width) - var(--page-body-width)) / 2);
+  --page-inline-margin-start: var(--page-margin-top);
+  --page-inline-margin-end: calc(var(--page-height) - var(--page-body-height) - var(--page-inline-margin-start));
   font-size: var(--base-font-size);
   line-height: var(--base-line-height);
 
@@ -48,9 +48,9 @@
   size: var(--page-width) var(--page-height);
   /* bleed: 3mm; */
   /* marks: crop cross; */
-  margin-block-start: var(--page-block-margin-start);
-  margin-block-end: var(--page-block-margin-end);
-  margin-inline: var(--page-inline-margin);
+  margin-inline-start: var(--page-inline-margin-start);
+  margin-inline-end: var(--page-inline-margin-end);
+  margin-block: var(--page-block-margin);
   font-size: 10Q;
 }
 @page: left {
@@ -60,8 +60,8 @@
   /* background-position: -3mm; */
   font-size: 11Q;
   font-family: var(--header-font);
-  margin-inline-start: calc(var(--page-inline-margin) + var(--page-margin-yshift));
-  margin-inline-end: calc(var(--page-inline-margin) - var(--page-margin-yshift));
+  margin-block-start: calc(var(--page-block-margin) + var(--page-margin-xshift));
+  margin-block-end: calc(var(--page-block-margin) - var(--page-margin-xshift));
   /* ノンブル */
   @bottom-left {
     content: counter(page);
@@ -76,14 +76,15 @@
   background-position: -3mm; */
   font-size: 11Q;
   font-family: var(--header-font);
-  margin-inline-start: calc(var(--page-inline-margin) - var(--page-margin-yshift));
-  margin-inline-end: calc(var(--page-inline-margin) + var(--page-margin-yshift));
+  margin-block-start: calc(var(--page-block-margin) - var(--page-margin-xshift));
+  margin-block-end: calc(var(--page-block-margin) + var(--page-margin-xshift));
   /* ノンブル */
   @bottom-right {
     content: counter(page);
     text-align: end;
     writing-mode: horizontal-tb;
   }
+  /* 柱 */
   @bottom-center {
     content: string(chapter-number, first) "　" string(chapter-title, first);
     writing-mode: horizontal-tb;
