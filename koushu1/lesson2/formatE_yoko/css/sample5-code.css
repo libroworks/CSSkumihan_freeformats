@@ -6,17 +6,22 @@ code {
 }
 
 pre {
-  font-family: var(--code-font);
   white-space: pre-wrap;
   line-break: anywhere;
   text-spacing: none;
   font-size: 12Q;
   line-height: 18Q;
+}
+
+pre:has(code) {
+  font-family: var(--code-font);
+
   border: solid 0.5mm #585656;
   padding-block: 0.5mm;
   padding-inline: 1.5mm;
   margin-block: 6mm;
   margin-inline: 0;
+
   /* background: repeating-linear-gradient(#eee 0, #eee 18Q, #fff 18Q, #fff 36Q); */
   background-image: url("img/vs_pre_bg.png");
   background-size: var(--page-body-width) 9mm;
@@ -24,6 +29,7 @@ pre {
   background-position-y: 0.5mm;
   border-radius: 1mm;
 }
+
 .codenum-elem {
   width: 2em;
   display: inline-block;
