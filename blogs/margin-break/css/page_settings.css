@@ -81,10 +81,6 @@
     content: counter(page);
     text-align: end;
   }
-  @right-top {
-    content: element(sideindex);
-  }
-
   @bottom-center {
     content: string(chapter-number, first) "　" string(chapter-title, first);
   }
