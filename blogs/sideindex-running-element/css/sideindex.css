@@ -1,0 +1,43 @@
+:root {
+  --sideindex-size: 8mm;
+}
+
+.sideindex {
+  position: running(sideindex);
+  writing-mode: vertical-rl;
+}
+
+.sideindex-number {
+  margin-inline-start: 6mm;
+  inline-size: 12mm;
+  block-size: var(--sideindex-size);
+  background-color: #00f;
+  color: #fff;
+  font-size: 15Q;
+  writing-mode: horizontal-tb;
+  padding-inline-start: 2mm;
+  padding-block-start: 1mm;
+  margin-block-end: 2mm;
+}
+/* 章ごとにツメ位置を変える */
+.top1 {
+  margin-inline-start: calc(var(--sideindex-size) * 0);
+}
+.top2 {
+  margin-inline-start: calc(var(--sideindex-size) * 1);
+}
+.top3 {
+  margin-inline-start: calc(var(--sideindex-size) * 2);
+}
+.top4 {
+  margin-inline-start: calc(var(--sideindex-size) * 3);
+}
+.top5 {
+  margin-inline-start: calc(var(--sideindex-size) * 4);
+}
+.top6 {
+  margin-inline-start: calc(var(--sideindex-size) * 5);
+}
+.top7 {
+  margin-inline-start: calc(var(--sideindex-size) * 6);
+}
