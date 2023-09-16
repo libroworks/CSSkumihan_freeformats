@@ -1,0 +1,182 @@
+[
+  {
+    "f": ":{3,}\\{\\.?([a-z|0-9|\\-|_|\\s]+)\\}",
+    "r": "<div class=\"$1\">"
+  },
+  {
+    "f": ":{3,}",
+    "r": "</div>"
+  },
+  {
+    "f": "@div:([a-z|0-9|_ ]+)",
+    "r": "<div class=\"$1\">"
+  },
+  {
+    "f": "@divend",
+    "r": "</div>"
+  },
+  {
+    "f": "<hr>",
+    "r": "<hr class=\"pagebreak\">"
+  },
+  {
+    "f": "@nega:(\\d+)",
+    "r": "<div style=\"margin-top:-$1mm\"></div>"
+  },
+  {
+    "f": "@posi:(\\d+)",
+    "r": "<div style=\"margin-top:$1mm\"></div>"
+  },
+  {
+    "f": "@clear",
+    "r": "<div class=\"floatclear\"></div>"
+  },
+  {
+    "f": "@comment:([^@]*)@commend",
+    "r": "<span class=\"hen-comment\">$1</span>"
+  },
+  {
+    "f": "<li([^>]*)>(.*)@lu([0-9]+),([0-9]+)@([0-9]+),([0-9]+)</li>",
+    "r": "<li$1 style=\"position:absolute;left:$5mm;top:$6mm;\" class=\"movitem-lu\"><svg viewbox=\"0 0 $3 $4\" width=\"$3mm\" height=\"$4mm\" style=\"position:absolute;left:-$3mm;top:-$4mm\"><line fill=\"none\" stroke=\"#888\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"$4\"/><line fill=\"none\" stroke=\"#888\" x1=\"0\" y1=\"$4\" x2=\"$3\" y2=\"$4\" /></svg>$2</li>"
+  },
+  {
+    "f": "<li([^>]*)>(.*)@ld([0-9]+),([0-9]+)@([0-9]+),([0-9]+)</li>",
+    "r": "<li$1 style=\"position:absolute;left:$5mm;top:$6mm;\" class=\"movitem-ld\"><svg viewbox=\"0 0 $3 $4\" width=\"$3mm\" height=\"$4mm\" style=\"position:absolute;left:-$3mm;top:2mm\"><line fill=\"none\" stroke=\"#888\" x1=\"0\" y1=\"0\" x2=\"$3\" y2=\"0\"/><line fill=\"none\" stroke=\"#888\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"$4\" /></svg>$2</li>"
+  },
+  {
+    "f": "<li([^>]*)>(.*)@ru([0-9]+),([0-9]+)@([0-9]+),([0-9]+)</li>",
+    "r": "<li$1 style=\"position:absolute;left:$5mm;top:$6mm;\" class=\"movitem-ru\"><svg viewbox=\"0 0 $3 $4\" width=\"$3mm\" height=\"$4mm\" style=\"position:absolute;right:-$3mm;top:-$4mm\"><line fill=\"none\" stroke=\"#888\" x1=\"$3\" y1=\"0\" x2=\"$3\" y2=\"$4\"/><line fill=\"none\" stroke=\"#888\" x1=\"0\" y1=\"$4\" x2=\"$3\" y2=\"$4\" /></svg>$2</li>"
+  },
+  {
+    "f": "<li([^>]*)>(.*)@rd([0-9]+),([0-9]+)@([0-9]+),([0-9]+)</li>",
+    "r": "<li$1 style=\"position:absolute;left:$5mm;top:$6mm;\" class=\"movitem-rd\"><svg viewbox=\"0 0 $3 $4\" width=\"$3mm\" height=\"$4mm\" style=\"position:absolute;right:-$3mm;top:2mm\"><line fill=\"none\" stroke=\"#888\" x1=\"0\" y1=\"0\" x2=\"$3\" y2=\"0\"/><line fill=\"none\" stroke=\"#888\" x1=\"$3\" y1=\"0\" x2=\"$3\" y2=\"$4\" /></svg>$2</li>"
+  },
+  {
+    "f": "<li([^>]*)>(.*)@ur(\\d+),(\\d+)@(\\d+),(\\d+)</li>",
+    "r": "<li$1 style=\"position:absolute;left:$5mm;top:$6mm;\" class=\"movitem-ur\"><svg viewbox=\"0 0 $3 $4\" width=\"$3mm\" height=\"$4mm\" style=\"position:absolute;left:2mm;top:-$4mm\"><line fill=\"none\" stroke=\"#888\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"$4\"/><line fill=\"none\" stroke=\"#888\" x1=\"0\" y1=\"0\" x2=\"$3\" y2=\"0\" /></svg>$2</li>"
+  },
+  {
+    "f": "<li([^>]*)>(.*)@ls([0-9]+)@([0-9]+),([0-9]+)</li>",
+    "r": "<li$1 style=\"position:absolute;left:$4mm;top:$5mm;\" class=\"movitem-ls\"><svg viewbox=\"0 0 $3 1\" width=\"$3mm\" height=\"1mm\" style=\"position:absolute;left:-$3mm;top:0\"><line fill=\"none\" stroke=\"#888\" x1=\"0\" y1=\"0\" x2=\"$3\" y2=\"0\"/></svg>$2</li>"
+  },
+  {
+    "f": "<li([^>]*)>(.*)@us([0-9]+)@([0-9]+),([0-9]+)</li>",
+    "r": "<li$1 style=\"position:absolute;left:$4mm;top:$5mm;\" class=\"movitem-us\"><svg viewbox=\"0 0 1 $3\" width=\"1mm\" height=\"$3mm\" style=\"position:absolute;left:2mm;top:-$3mm\"><line fill=\"none\" stroke=\"#888\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"$3\"/></svg>$2</li>"
+  },
+  {
+    "f": "<li([^>]*)>(.*)@ds([0-9]+)@([0-9]+),([0-9]+)</li>",
+    "r": "<li$1 style=\"position:absolute;left:$4mm;top:$5mm;\" class=\"movitem-ds\"><svg viewbox=\"0 0 1 $3\" width=\"1mm\" height=\"$3mm\" style=\"position:absolute;left:2mm;bottom:-$3mm\"><line fill=\"none\" stroke=\"#888\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"$3\"/></svg>$2</li>"
+  },
+  {
+    "f": "<li([^>]*)>(.*)@rs([0-9]+)@([0-9]+),([0-9]+)</li>",
+    "r": "<li$1 style=\"position:absolute;left:$4mm;top:$5mm;\" class=\"movitem-rs\"><svg viewbox=\"0 0 $3 1\" width=\"$3mm\" height=\"1mm\" style=\"position:absolute;right:-$3mm;top:3mm\"><line fill=\"none\" stroke=\"#888\" x1=\"0\" y1=\"0\" x2=\"$3\" y2=\"0\"/></svg>$2</li>"
+  },
+  {
+    "f": "<li[^>]*>▶",
+    "r": "<li class=\"aokome\">"
+  },
+  {
+    "f": "<li[^>]*>([\u2776-\u277F\u24EB-\u24F4]+)",
+    "r": "<li class=\"akakome\"><span>$1</span>"
+  },
+  {
+    "f": "<h6([^>]*)>",
+    "r": "<h6$1 class=\"codetitle\"><span>"
+  },
+  {
+    "f": "<span class=\"token comment\"([^>]*)>#←",
+    "r": "<span class=\"token comment codered\"$1>"
+  },
+  {
+    "f": "<span class=\"token comment\"([^>]*)>//←",
+    "r": "<span class=\"token comment codered\"$1>"
+  },
+  {
+    "f": "<span class=\"token comment\"([^>]*)>/\\*←←(.*)\\*/",
+    "r": "<span class=\"token comment codered codered-right\"$1>$2"
+  },
+  {
+    "f": "<span class=\"token comment\"([^>]*)>/\\*←(.*)\\*/",
+    "r": "<span class=\"token comment codered\"$1>$2"
+  },
+  {
+    "f": "<span class=&quot;token comment&quot;([^>]*)>&lt;!--←(.*)--&gt;",
+    "r": "<span class=\"token comment codered\"$1>$2"
+  },
+  {
+    "f": "〘",
+    "r": "<kbd>"
+  },
+  {
+    "f": "〙",
+    "r": "</kbd>"
+  },
+  {
+    "f": "<p[^>]*>【先生([^】]+)】",
+    "r": "<p class=\"kaiwa sense $1\">"
+  },
+  {
+    "f": "<p[^>]*>【生徒([^】]+)】",
+    "r": "<p class=\"kaiwa deshi $1\">"
+  },
+  {
+    "f": "<p>(<div class=\"[^\"]+\">)</p>",
+    "r": "$1"
+  },
+  {
+    "f": "<p></div></p>",
+    "r": "</div>"
+  },
+  {
+    "f": "<p></div>",
+    "r": "</div>"
+  },
+  {
+    "f": "</div></p>",
+    "r": "</div>"
+  },
+  {
+    "f": "(<div class=\"[^\"]+\">)</p>",
+    "r": "$1"
+  },
+  {
+    "f": "<p>(<div class=\"[^\"]+\">)",
+    "r": "$1"
+  },
+  {
+    "f": "(<hr class=\"[^\"]+\">)</p>",
+    "r": "$1"
+  },
+  {
+    "f": "<p>(<hr class=\"[^\"]+\">)",
+    "r": "$1"
+  },
+  {
+    "f": "<p>(<svg [^>]+>)</p>",
+    "r": "$1"
+  },
+  {
+    "f": "<p>(<image [^>]+>)",
+    "r": "$1"
+  },
+  {
+    "f": "(<image [^>]+>)</p>",
+    "r": "$1"
+  },
+  {
+    "f": "<p>(</svg>)",
+    "r": "$1"
+  },
+  {
+    "f": "(</svg>)</p>",
+    "r": "$1"
+  },
+  {
+    "f": "<p></p>",
+    "r": ""
+  },
+  {
+    "f": "<p></p>",
+    "r": ""
+  }
+]

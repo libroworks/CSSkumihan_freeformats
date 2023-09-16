@@ -1,0 +1,101 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Maru+Gothic:wght@700&display=swap");
+
+@font-face {
+  font-family: udevgothic-r;
+  src: url("fonts/UDEVGothic-Regular.ttf");
+}
+@font-face {
+  font-family: keyfont;
+  src: url("fonts/keyboard-JP-Regular.otf");
+}
+
+:root {
+  /* 基本体裁 */
+  --base-font-size: 12Q;
+  --base-line-height: 21Q;
+  --page-width: 148mm;
+  --page-height: 210mm;
+  --letters-per-line: 39;
+  --lines-per-page: 34;
+  --page-margin-top: 15mm; /*天地マージンは天のみ指定できる。地は自動計算*/
+  --page-margin-xshift: 0mm; /*左右マージンはデフォルト左右均等。xshift値でずらす*/
+  --column-font-size: 12Q; /*コラムのフォントサイズ*/
+  /* フォント指定 */
+  --main-text-font: "Noto Sans JP"; /*メインフォント*/
+  --header-font: "Zen Maru Gothic"; /*見出しフォント*/
+  --code-font: "udevgothic-r"; /*コードフォント*/
+
+  /* ページマージン自動計算 */
+  --page-body-width: calc(var(--base-font-size) * var(--letters-per-line));
+  --page-body-height: calc(var(--base-line-height) * var(--lines-per-page));
+  --page-inline-margin: calc((var(--page-width) - var(--page-body-width)) / 2);
+  --page-block-margin-start: var(--page-margin-top);
+  --page-block-margin-end: calc(var(--page-height) - var(--page-body-height) - var(--page-block-margin-start));
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+
+  font-family: var(--main-text-font);
+  font-weight: 400;
+  /* その他の指定 */
+  text-spacing: auto;
+  widows: 1;
+  orphans: 1;
+}
+
+@page {
+  size: var(--page-width) var(--page-height);
+  /* bleed: 3mm; */
+  /* marks: crop cross; */
+  margin-block-start: var(--page-block-margin-start);
+  margin-block-end: var(--page-block-margin-end);
+  margin-inline: var(--page-inline-margin);
+  font-size: 10Q;
+}
+@page: left {
+  /* background: url("img/R4_cssbk_smp_pageallbg_l.png");
+  background-size: calc(var(--page-width) + 6mm);
+  background-repeat: no-repeat;
+  background-position: -3mm; */
+  font-size: 11Q;
+  font-family: var(--header-font);
+  margin-inline-start: calc(var(--page-inline-margin) + var(--page-margin-xshift));
+  margin-inline-end: calc(var(--page-inline-margin) - var(--page-margin-xshift));
+  /* ノンブル */
+  @bottom-left {
+    content: counter(page);
+    text-align: start;
+  }
+}
+@page: right {
+  /* background: url("img/R4_cssbk_smp_pageallbg_r.png");
+  background-size: calc(var(--page-width) + 6mm);
+  background-repeat: no-repeat;
+  background-position: -3mm; */
+  font-size: 11Q;
+  font-family: var(--header-font);
+  margin-inline-start: calc(var(--page-inline-margin) - var(--page-margin-xshift));
+  margin-inline-end: calc(var(--page-inline-margin) + var(--page-margin-xshift));
+  /* ノンブル */
+  @bottom-right {
+    content: counter(page);
+    text-align: end;
+  }
+  @bottom-center {
+    content: string(chapter-number, first) "　" string(chapter-title, first);
+  }
+}
+
+/* 扉ページの設定 */
+@page: nth(1) {
+  margin: 0;
+  background-color: #88ddff;
+  /* background: url("img/R1_cssbk_smp_tobirabg.png");
+  background-size: calc(var(--page-width) + 6mm);
+  background-repeat: no-repeat;
+  background-position: -3mm; */
+
+  @bottom-center {
+    content: none;
+  }
+}

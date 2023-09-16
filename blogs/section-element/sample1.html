@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="ja"><head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <section class="level1" aria-labelledby="コンピュータのbr重箱の隅">
+      <h1 id="h1_0">コンピュータの<br>重箱の隅</h1>
+      <div class="chapter-lead">
+        章のリード文。章のリード文。章のリード文。章のリード文。
+        章のリード文。章のリード文。章のリード文。章のリード文。
+        </div>
+      
+      <section class="level2" aria-labelledby="論理回路から加算器は飛躍しすぎ">
+        <h2 id="h2_0">論理回路から加算器は飛躍しすぎ？</h2>
+        <p>ここでは、Rubyのプログラムを作成して、実行するまでの流れを解説します。最初にエディターでプログラムを書いて、コマンドプロンプトを実行するだけで、すぐに結果を確認できます。</p>
+        <section class="level3" aria-labelledby="プログラムを実行する手順を確認する">
+          <h3 id="h3_0">プログラムを実行する手順を確認する</h3>
+          <p>Rubyプログラムを書いて実行してみましょう。Rubyプログラムを実行するには3つの手順を踏みます。</p>
+          <p>まずはプログラムファイルを保存するフォルダを作成しておきましょう。本書では、ファイルはC:\Users…過去に「コンピュータの歴史」を<strong>ブール論理（Boolean Logic）</strong>の誕生あたりからたどろうとして、いろいろと調べてみたのだが、<strong>ジョージ・ブール氏</strong>の考えたものは現在ブール論理として習うものとかなり違っていた。</p>
+          <div class="figure">
+            
+            <svg width="87.207mm" height="68.157mm" viewBox="0 0 87.207 68.157">
+              <image width="218.017" height="170.392" xlink:href="img/sample1b-img1.png" transform="translate(0,0) scale(0.4)"></image>
+            </svg>
+          
+          <ul>
+            <li class="akakome"><span>❶</span>「I accept for terms...」にチェック</li>
+            <li>
+              ❷「Next」をクリック
+              </li></ul></div>
+            
+          
+          <p>ブール氏が考えたのは、<em>言葉で推論するとどうしてもあいまいさが生じるので、数式を使って推論すべきだ</em>というものだった。実際、ブール氏の論文を見てみると、足し算や掛け算らしき数式しか書かれていない。</p>
+          <p><a href="https://www.gutenberg.org/ebooks/36884">https://www.gutenberg.org/ebooks/36884</a>にリンクしたい</p>
+          <p>現在使われている論理記号やAND、ORなどの用語は、後世に<strong>数理論理学</strong>として発展していく中で作られたもので、最初のとっかかりのアイデアを考えた人として、ブール氏の名前を冠することにしたらしい。</p>
+        </section>
+        <section class="level3" aria-labelledby="論理回路の誕生">
+          <h3 id="h3_1">論理回路の誕生</h3>
+          <p>ブール氏が論文を書いてから100年ほどして、電信に使われるリレーを使った<strong>論理回路（Logic Circuit）</strong>が誕生した。<strong>クロード・シャノン氏</strong>が論理回路についての論文を書いたのが1937年で、ほぼ同時期に最初のデジタルコンピュータも誕生している。このあたり順番がはっきりしなくてモヤッとするが、たいていの発明・発見は、複数の人が同時期に同じ答えにたどりつくもののようだ。</p>
+          <pre class="language-py"><code class="language-py"><span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path
+<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+
+result <span class="token operator">=</span> <span class="token string">'## 目次{#toc role="doc-toc"}\n'</span>
+outpath <span class="token operator">=</span> Path<span class="token punctuation">(</span><span class="token string">'tocoutput.md'</span><span class="token punctuation">)</span>
+outpath<span class="token punctuation">.</span>write_text<span class="token punctuation">(</span>result<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span></code></pre>
+
+          <section class="level6" aria-labelledby="generate_tocpy">
+            <h6 class="codenumber" start-number="45" id="h6_0"><span>generate_toc.py</span></h6>
+            <pre class="language-python"><code class="language-python"><span class="codenum-elem">045</span><span class="token keyword">from</span> pathlib <span class="token keyword">import</span> Path
+<span class="codenum-elem">046</span><span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+<span class="codenum-elem">047</span>
+<span class="codenum-elem">048</span>result <span class="token operator">=</span> <span class="token string">'## 目次{#toc role="doc-toc"}\n'</span>
+<span class="codenum-elem">049</span>outpath <span class="token operator">=</span> Path<span class="token punctuation">(</span><span class="token string">'tocoutput.md'</span><span class="token punctuation">)</span>        <span class="token comment codered">コード引き出し線（先頭が←）</span>
+<span class="codenum-elem">050</span>outpath<span class="token punctuation">.</span>write_text<span class="token punctuation">(</span>result<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+</code></pre>
+
+            <div class="figure right">
+              
+              <svg width="40mm" height="40mm" viewBox="0 0 40 40">
+                <image width="845.256" height="255.764" xlink:href="img/img2-logic.svg" transform="translate(0,0) scale(0.1)"></image>
+              </svg>
+            
+            </div>
+            <p>ここで不思議なのは、スイッチを直列に並べてAND回路、並列に並べてOR回路が作れるというのは、ブール論理の延長として理解できる。しかし、その先、つまり<em>論理回路を使って計算する</em>という発想はどこからでてきたのだろう？</p>
+            <p>2進数1桁の計算を行う<strong>半加算器（Half Adder）</strong>は、AND回路2つとOR回路1つ、NOT回路1つの組み合わせで作れる。</p>
+          </section>
+          <section class="level6" aria-labelledby="表見出し">
+            <h6 id="h6_1" class="codetitle"><span>表見出し</span></h6>
+            <table>
+              <thead>
+                <tr>
+                  <th>●列見出し</th>
+                  <th align="center">●列見出し（中央ぞろえ）</th>
+                  <th align="right">●列見出し（右ぞろえ）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>セル</td>
+                  <td align="center">セル</td>
+                  <td align="right">セル</td>
+                </tr>
+                <tr>
+                  <td>セル</td>
+                  <td align="center">セル</td>
+                  <td align="right">90</td>
+                </tr>
+                <tr>
+                  <td>セル</td>
+                  <td align="center">セルの中に長めの文を入れる</td>
+                  <td align="right">1000</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th>●列見出し</th>
+                  <th align="center">●列見出し（中央ぞろえ）</th>
+                  <th align="right">●列見出し（右ぞろえ）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>セル</td>
+                  <td align="center">セル</td>
+                  <td align="right">セル</td>
+                </tr>
+                <tr>
+                  <td>セル</td>
+                  <td align="center">セル</td>
+                  <td align="right">90</td>
+                </tr>
+                <tr>
+                  <td>セル</td>
+                  <td align="center">セルの中に長めの文を入れる</td>
+                  <td align="right">1000</td>
+                </tr>
+              </tbody>
+            </table>
+            <p><kbd>Enter</kbd>キー</p>
+            <figure>
+              <img src="img/img3-adder.svg" alt="半加算器（Half Adder）" width="210" class="float-right">
+              <figcaption aria-hidden="true">半加算器（Half Adder）</figcaption>
+            </figure>
+            <blockquote>
+              <p>しかし、これがブール論理の延長で、普通に出てくるとはちょっと考えにくい気がする。ブール論理は「AND（かつ）」「OR（または）」などで真偽を求めるものであって、四則演算するものではないはずだ。</p>
+            </blockquote>
+            <p>残念ながら、加算器の発明者の資料は見つけられなかった。おそらく、何かを作ろうとして論理回路の組み合わせを考えているうちに、「0+0=00」「0+1=01」「1+0=01」「1+1=10」という結果を出せば足し算する回路が作れるという答えにパッとたどりついたのだろう。</p>
+          </section>
+        </section>
+      </section>
+      <section class="level2" aria-labelledby="過去問にチャレンジ">
+        <h2 class="kakomon" id="h2_1">過去問にチャレンジ！</h2>
+        <section class="level3" aria-labelledby="確認問題1">
+          <h3 id="h3_2">確認問題1</h3>
+          <p>サブネットマスクの役割として，適切なものはどれか。</p>
+          <ul>
+            <li>ア：IPアドレスから，利用しているLAN上のMACアドレスを導き出す。</li>
+            <li>イ：IPアドレスの先頭から何ビットをネットワークアドレスに使用するかを定義する。</li>
+            <li>ウ：コンピュータをLANに接続するだけで，TCP/IPの設定情報を自動的に取得する。</li>
+            <li>エ：通信相手のドメイン名とIPアドレスを対応付ける。</li>
+          </ul>
+          <p>（出典：令和5年春期 問97）</p>
+        </section>
+        <section class="level3" aria-labelledby="解答解説1">
+          <h3 id="h3_3">解答・解説1</h3>
+          <section class="level4" aria-labelledby="正解イ">
+            <h4 id="h4_0">正解：イ</h4>
+          </section>
+          <section class="level4" aria-labelledby="解説">
+            <h4 id="h4_1">解説</h4>
+            <p>サブネットマスクはIPアドレスのネットワーク部を指定するものです。よって答えはイです。</p>
+            <ul>
+              <li>ア：ARPの役割です。</li>
+              <li>イ：正解です。</li>
+              <li>ウ：DHCPの役割です。</li>
+              <li>エ：DNSの役割です。</li>
+            </ul>
+          </section>
+        </section>
+      </section>
+    </section>
+  
+
+</body></html>

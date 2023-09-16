@@ -1,0 +1,50 @@
+h2.kakomon {
+  font-size: 20Q;
+  border: solid 0.25mm #000;
+  border-radius: 4mm;
+  margin-inline: 0;
+  inline-size: 100%;
+  text-align: center;
+  block-size: 12mm;
+  background: #fff;
+}
+h2.kakomon::before {
+  content: none;
+}
+
+section:has(> .kakomon) :is(p, li) {
+  font-size: 11Q;
+  line-height: 18Q;
+  text-indent: 0;
+}
+section:has(> .kakomon) h3 {
+  font-size: 13Q;
+  background: none;
+  padding: 0;
+  block-size: auto;
+  color: #009ddb;
+}
+section:has(> .kakomon) h3::before {
+  content: "■";
+}
+section:has(> .kakomon) h4 {
+  margin-block: 0;
+}
+section:has(> .kakomon) h4::before {
+  content: none;
+}
+/* 過去問内のリスト */
+section:has(> .kakomon) ul {
+  list-style: none;
+}
+section:has(> .kakomon) li {
+  text-indent: -2em;
+}
+
+/* Named Page */
+@page kakomon-page {
+  background: #ddd;
+}
+section:has(> .kakomon) {
+  page: kakomon-page;
+}
