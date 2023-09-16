@@ -123,16 +123,10 @@ h6 {
   margin-block-end: 2mm;
 }
 
-/* hr（改ページ）の直後のh3 */
-hr + h3,
-hr + section > h3:first-child,
-section:has(hr:last-child) + section > h3:first-child {
-  margin-break: discard;
-}
-/* hr（改ページ）の直後のh4 */
-hr + h4,
-hr + section > h4:first-child,
-section:has(hr:last-child) + section > h4:first-child {
+/* hr（改ページ）の直後（h3、h4） */
+hr + :is(h3, h4),
+hr + section > :is(h3, h4):first-child,
+section:has(hr:last-child) + section > :is(h3, h4):first-child {
   margin-break: discard;
 }
 
