@@ -119,10 +119,10 @@ h6 {
   margin-block-end: 2mm;
 }
 
-/* hr（改ページ）の直後のh3 */
-hr + h3,
-hr + section > h3:first-child,
-section:has(hr:last-child) + section > h3:first-child {
+/* hr（改ページ）の直後のh3～h6 */
+hr + :is(h3, h4, h5, h6),
+hr + section > :is(h3, h4, h5, h6):first-child,
+section:has(hr:last-child) + section > :is(h3, h4, h5, h6):first-child {
   margin-break: discard;
 }
 
@@ -205,8 +205,14 @@ a {
   margin-block: 2mm;
   margin-inline: 2em 0;
 }
-:is(.figure, figure) p {
+/* 図キャプション */
+:is(.figure, figure) p:not(:has(:is(img, svg))) {
   text-indent: 0;
+  font-size: 10Q;
+  line-height: 15Q;
+  /* margin-block-start: 1mm; */
+  font-weight: 700;
+  inline-size: 100%;
 }
 /* 図中文字 */
 :is(.figure, figure) ul {
