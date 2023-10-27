@@ -179,6 +179,7 @@ hr.blankline {
 a {
   color: #000;
   text-decoration: none;
+  line-break: anywhere;
 }
 
 /* 図版 */
