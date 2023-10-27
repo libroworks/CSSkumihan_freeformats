@@ -196,7 +196,7 @@ a {
   margin-inline: 0;
 }
 :is(.figure, figure) :is(img, svg) {
-  border: solid 0.5mm #ccc;
+  outline: solid 0.5mm #ccc;
 }
 
 :is(.figure, figure).float-right {
@@ -236,11 +236,11 @@ a {
 
 img {
   max-inline-size: 100%;
-  border: solid 0.5mm #000;
+  outline: solid 0.5mm #000;
 }
 
 img[src$=".svg"] {
-  border: none;
+  outline: none;
 }
 
 /* 図版右寄せ */
