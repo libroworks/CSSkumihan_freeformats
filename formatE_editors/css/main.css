@@ -57,7 +57,7 @@ h1::before {
 
 /* 節 */
 h2 {
-  break-before: page;
+  break-before: verso;
   font-size: 36Q;
   line-height: 42Q;
   inline-size: 10em;

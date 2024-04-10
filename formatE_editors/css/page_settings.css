@@ -72,6 +72,8 @@
   background-size: calc(var(--page-width) + 6mm);
   background-repeat: no-repeat;
   background-position: -3mm; */
+  background-image: url(img/back-green.png);
+  background-repeat: no-repeat;
   font-size: 11Q;
   font-family: var(--header-font);
   margin-inline-start: calc(var(--page-inline-margin) - var(--page-margin-xshift));
@@ -87,15 +89,32 @@
 }
 
 /* 扉ページの設定 */
-@page: nth(1) {
+@page tobira {
   margin: 0;
-  background-color: #88ddff;
-  /* background: url("img/R1_cssbk_smp_tobirabg.png");
-  background-size: calc(var(--page-width) + 6mm);
+  background-image: url(img/back-blue.png);
   background-repeat: no-repeat;
-  background-position: -3mm; */
 
   @bottom-center {
+    content: none;
+  }
+  @bottom-right {
+    content: none;
+  }
+}
+
+section:has(h1){
+  page: tobira;
+}
+
+@page: blank {
+  background-color: #f00;
+  background-image: url(img/back-pink.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  @bottom-center {
+    content: none;
+  }  
+  @bottom-right {
     content: none;
   }
 }
