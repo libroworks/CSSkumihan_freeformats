@@ -87,7 +87,7 @@
 }
 
 /* 扉ページの設定 */
-@page: nth(1) {
+@page tobira {
   margin: 0;
   background-color: #88ddff;
   /* background: url("img/R1_cssbk_smp_tobirabg.png");
@@ -98,4 +98,8 @@
   @bottom-center {
     content: none;
   }
+}
+
+section:has(>h1) {
+  page: tobira;
 }

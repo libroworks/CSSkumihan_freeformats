@@ -23,6 +23,7 @@ h5,
 h6 {
   font-family: var(--header-font);
   text-spacing: no-autospace;
+  word-break: auto-phrase;
 }
 
 /* 章タイトル */
