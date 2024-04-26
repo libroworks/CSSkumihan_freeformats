@@ -222,8 +222,7 @@ a {
   font-size: 11Q;
   max-inline-size: 14em;
   inline-size: fit-content;
-  right: 0;
-  inset-inline-end: none;
+  inset-inline-end: 0;
   list-style: none;
   margin: 0;
 }
@@ -232,7 +231,7 @@ a {
   line-height: 16Q;
   border: solid 0.25mm #f00;
   background: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2mm;
+  margin-block-end: 2mm;
   padding: 0 0.5mm;
 }
 
@@ -294,7 +293,7 @@ blockquote {
   position: absolute;
   display: block;
   text-indent: 0;
-  right: -8em;
+  inset-inline-end: -8em;
   font-size: 8Q;
   line-height: 13Q;
   background: #ff0;
