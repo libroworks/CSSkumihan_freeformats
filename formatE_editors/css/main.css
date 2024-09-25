@@ -271,7 +271,7 @@ blockquote {
 }
 
 /* コラム枠 */
-.column {
+section:has(> .column) {
   border: solid 0.2mm #8df;
   border-radius: 10px;
   padding: 4mm;
@@ -281,12 +281,25 @@ blockquote {
   margin-inline: auto;
   width: 114mm;
   background: #eef;
+
+  /* コラム内基本テキスト設定 */
+  font-size: 11Q;
+  line-height: 19Q;
+  text-indent: 0;
 }
-.column h5 {
+/* コラム見出し */
+h5.column {
   margin-top: 0;
   font-size: 14Q;
   color: #3da8c9;
 }
+/* コラム内本文テキスト設定 */
+section:has(> .column) p{
+  font-size: 11Q;
+  line-height: 19Q;
+  text-indent: 0;
+}
+
 
 /*編集コメント（サイドバー表示）*/
 .hen-comment {
